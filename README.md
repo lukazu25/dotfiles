@@ -24,7 +24,7 @@ Each directory contains customized configuration files to enhance usability, app
 ### 📝 Editor Configurations
 - **Neovim**
 - **Vim**
-
+- **Emacs**
 These setups include plugins, custom keybindings, and settings for an efficient development experience.
 
 ### 🐚 Shell Configurations
