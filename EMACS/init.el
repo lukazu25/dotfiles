@@ -21,6 +21,11 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
+(setq auto-save-default nil)
+(setq auto-save-list-file-name nil)
+(setq make-backup-files nil)
+(setq delete-old-versions -1)
+(setq create-lockfiles nil)  
 (global-display-line-numbers-mode 1)
 (setq display-line-numbers-type 'relative)
 
