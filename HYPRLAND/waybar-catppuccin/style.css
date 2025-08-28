@@ -1,0 +1,177 @@
+* {
+	font-family: JetBrainsMono Nerd Font;
+	font-weight: bold;
+	font-size: 16px;
+	min-height: 0px;
+}
+
+@define-color bg #1e1e2e;
+@define-color bg2 #181825;
+@define-color fg #cdd6f4;
+@define-color pink #f5c2e7;
+@define-color green #a6e3a1;
+@define-color fl #f2cdcd;
+@define-color blue #89b4fa;
+@define-color red #eba0ac;
+@define-color vl #cba6f7;
+@define-color yellow #fab387;
+@define-color purple #9947ad;
+@define-color yellow2 #cfb040;
+
+window#waybar {
+	border-radius: 20px;
+	background-color: @bg;
+}
+
+#workspaces {
+	padding: 2px 15px;
+	margin: 5px;
+	color: @fg;
+	background-color: @bg2;
+	border: none;
+	border-radius: 20px;
+}
+
+button {
+	box-shadow: inset 0px -3px transparent;
+	border: none;
+	border-radius: 0px;
+}
+button:hover {
+	background: inherit;
+	box-shadow: inset 0px -3px transparent;
+}
+#workspaces button {
+	padding: 0px 5px;
+	background-color: transparent;
+	color: @fg;
+}
+#workspaces button:hover {
+	color: @yellow;
+}
+#workspaces button.focused {
+	color: @green;
+	background-color: @bg;
+}
+#workspaces button.urgent {
+	color: @red;
+	background-color: @bg;
+}
+
+#window {
+	padding: 2px 15px;
+	margin: 5px;
+	color: @yellow;
+	background-color: @bg2;
+	border: none;
+	border-radius: 20px;
+}
+
+#cpu {
+	padding: 2px 15px;
+	margin: 5px;
+	color: @green;
+	background-color: @bg2;
+	border: none;
+	border-radius: 20px;
+}
+#cpu:hover {
+	color: @yellow;
+}
+
+#battery {
+	padding: 2px 15px;
+	margin: 5px;
+	color: @fl;
+	background-color: @bg2;
+	border: none;
+	border-radius: 20px;
+}
+#battery.warning {
+	color: @yellow;
+}
+#battery.critical {
+	color: @red;
+}
+#battery:hover {
+	color: @yellow;
+}
+
+#memory {
+	padding: 2px 15px;
+	margin: 5px;
+	color: @blue;
+	background-color: @bg2;
+	border: none;
+	border-radius: 20px;
+}
+#memory:hover {
+	color: @yellow;
+}
+
+#tray {
+	padding: 2px 15px;
+	margin: 5px;
+	background-color: @bg2;
+	border: none;
+	border-radius: 20px;
+}
+
+#language {
+	padding: 2px 15px;
+	margin: 5px;
+	color: @purple;
+	background-color: @bg2;
+	border: none;
+	border-radius: 20px;
+}
+#language:hover {
+	color: @yellow;
+}
+
+#pulseaudio {
+	padding: 2px 15px;
+	margin: 5px;
+	color: @yellow2;
+	background-color: @bg2;
+	border: none;
+	border-radius: 20px;
+}
+#pulseaudio.muted {
+	color: @red;
+}
+#pulseaudio:hover {
+	color: @yellow;
+}
+
+#clock {
+	padding: 2px 15px;
+	margin: 5px;
+	color: @fg;
+	background-color: @bg2;
+	border: none;
+	border-radius: 20px;
+}
+#clock:hover {
+	color: @yellow;
+}
+
+#custom-power {
+	padding: 2px 15px;
+	margin: 5px 10px 5px 5px;
+	color: @pink;
+	background-color: @bg2;
+	border: none;
+	border-radius: 20px;
+}
+#custom-power:hover {
+	color: @red;
+}
+
+tooltip {
+	background: @bg;
+	margin: 20px;
+	padding: 15px;
+	border: 20px solid rgba(100, 114, 125, 0);
+	border-radius: 10px;
+}

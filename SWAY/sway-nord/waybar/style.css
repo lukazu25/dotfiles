@@ -1,0 +1,53 @@
+* {
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  font-family: "JetBrains Mono Nerd Font propo ";
+  font-size: 16px;
+  padding: 0;
+}
+
+window#waybar {
+  background: #2E3440; /* Polar Night */
+  color: #D8DEE9;       /* Snow Storm */
+}
+
+tooltip {
+  background-color: #2E3440; /* Polar Night */
+  color: #D8DEE9;
+}
+
+#clock,
+#tray,
+#cpu,
+#memory,
+#battery,
+#network,
+#pulseaudio {
+  margin: 2px 2px 0px 0px;
+  padding: 2px 8px;
+}
+
+#workspaces button {
+  color: #D8DEE9; /* Snow Storm */
+}
+
+#workspaces button.focused {
+  background-color: #88C0D0; /* Frost 2 */
+  color: #2E3440;            /* Polar Night */
+}
+
+#workspaces button.active {
+  background-color: #2E3440; /* Polar Night */
+  color: #D8DEE9;            /* Snow Storm */
+}
+
+#battery,
+#tray,
+#clock,
+#cpu,
+#pulseaudio,
+#memory {
+  color: #D8DEE9; /* Snow Storm */
+}
+
