@@ -42,6 +42,13 @@
   (unless (member "all-the-icons" (font-family-list))
     (all-the-icons-install-fonts t)))
 
+;; Dired icons
+(use-package all-the-icons-dired
+  :after (all-the-icons dired)
+  :hook (dired-mode . all-the-icons-dired-mode)
+  :custom
+  (all-the-icons-dired-monochrome nil)) ;; Set to t for monochrome icons
+
 ;; Theme (Doom)
 (use-package doom-themes
   :config
