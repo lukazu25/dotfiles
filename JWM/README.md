@@ -2,7 +2,13 @@
 
 copy jwm config to home directory 
 ```bash
-sudo cp .jwmrc ~
+sudo cp Arc.jwmrc ~
+```
+```bash
+sudo cp Gruvbox.jwmrc ~
+```
+```bash
+sudo cp Solarized.jwmrc ~
 ```
 copy rofi configs to rofi directory 
 ```bash
