@@ -82,6 +82,15 @@
   :custom
   (vertico-cycle t))
 
+;; Orderless (flexible completion style)
+(use-package orderless
+  :init
+  (setq completion-styles '(orderless basic)
+        completion-category-defaults nil
+        completion-category-overrides '((file (styles . (partial-completion)))))
+  :config
+  (setq orderless-component-separator #'orderless-escapable-split-on-space))
+
 ;; Corfu (completion at point)
 (use-package corfu
   :init
