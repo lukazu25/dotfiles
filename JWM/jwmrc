@@ -3,6 +3,7 @@
 
     <!-- The root menu. -->
     <RootMenu onroot="12">
+        <Program icon="applications-system" label="App Launcher">rofi -show drun</Program>
         <Program icon="utilities-terminal" label="Terminal">xfce4-terminal</Program>
         <Program icon="system-file-manager" label="File Manager">thunar</Program>
         <Program icon="web-browser" label="Web Browser">firefox</Program>
