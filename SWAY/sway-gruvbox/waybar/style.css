@@ -1,0 +1,80 @@
+* {
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  font-family: "JetBrains Mono Nerd Font Propo";
+  font-size: 16px;
+  padding: 0;
+}
+
+window#waybar {
+  background: #282828; /* base background from unfocused_inactive */
+  color: #fbf1f7;       /* default text color */
+}
+
+tooltip {
+  background-color: #282828;
+  color: #fbf1c7;
+}
+
+/* Modules */
+#clock,
+#tray,
+#cpu,
+#memory,
+#battery,
+#network,
+#pulseaudio {
+  margin: 2px 2px 0px 0px;
+  padding: 2px 8px;
+  color: #fbf1c7;
+  background-color: #282828;
+}
+
+/* Workspaces */
+#workspaces button {
+  color: #fbf1c7;
+  background-color: #282828;
+  border: none;
+}
+
+/* Focused workspace — client.focused */
+#workspaces button.focused {
+  background-color: #d65d0e;
+  color: #fbf1c7;
+  border: none;
+}
+
+/* Active/focused_inactive */
+#workspaces button.active {
+  background-color: #282828;
+  color: #fbf1c7;
+  border: none;
+}
+
+/* Inactive — same as unfocused */
+#workspaces button.inactive {
+  background-color: #282828;
+  color: #fbf1c7;
+  border: none;
+}
+
+/* Urgent — client.urgent */
+#workspaces button.urgent {
+  background-color: #900000;
+  color: #ffffff;
+  border: none;
+}
+
+/* Optional: Placeholder workspace (not always used in Waybar) */
+#workspaces button.placeholder {
+  background-color: #0c0c0c;
+  color: #ffffff;
+  border: none;
+}
+
+/* Redundant declaration for consistency */
+#battery, #tray, #clock, #cpu, #pulseaudio, #memory {
+  color: #fbf1c7;
+}
+
