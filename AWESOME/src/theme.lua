@@ -64,7 +64,7 @@ theme.corner_radius = dpi(12)
 
 theme.useless_gap = dpi(6)
 
-theme.border_width = dpi(6)
+theme.border_width = dpi(3)
 theme.border_normal = colors.border_normal
 theme.border_focus = colors.border_focus
 theme.border_marked = colors.border_marked
