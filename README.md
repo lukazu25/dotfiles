@@ -9,7 +9,7 @@ Welcome to my dotfiles repository! This collection includes configuration files 
 ### 🖥️ Window Manager Configurations
 This repository supports a wide range of tiling (and some stacking) window managers:
 
-- **Awesome**
+- **AwesomeWM**
 - **BSPWM**
 - **DWM**
 - **Hyprland**
