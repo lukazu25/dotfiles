@@ -48,8 +48,8 @@
 
   "pulseaudio": {
     "format": "{icon} {volume}% {format_source}",
-    "format-bluetooth": "{icon} {volume}% {format_source}",
-    "format-bluetooth-muted": "{icon}  {format_source}",
+    "format-bluetooth": " {volume}% {format_source}",
+    "format-bluetooth-muted": "  {format_source}",
     "format-muted": "  {format_source}",
     "format-source": "  {volume}%",
     "format-source-muted": " ",
@@ -108,7 +108,7 @@
   "custom/powermenu": {
 		"format": "{icon}",
 		"format-icons": "",
-		"on-click": "wlogout",
+		"on-click": "~/.config/rofi/powermenu.sh",
 		"escape": true,
 		"tooltip": false
 	},
