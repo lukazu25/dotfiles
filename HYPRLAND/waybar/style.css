@@ -1,7 +1,7 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: monospace;
+    font-family: JetBrainsMono Nerd Font propo;
     font-size: 14px;
     min-height: 20px;
 }
@@ -47,7 +47,8 @@
 }
 
 /* System modules with reduced spacing */
-#memory, #cpu, #network, #pulseaudio, #tray, #language, #battery, #clock {
+#memory, #cpu, #network, #pulseaudio, #tray, #language, #battery, #clock,
+#power-profiles-daemon, #custom-notifications, #custom-powermenu {
     padding: 0 8px;
     margin: 0 3px;
     color: #ffffff;
@@ -85,9 +86,7 @@
     background: #eb4d4b;
 }
 
-/* Additional modules */
 #network.disconnected {
     background: #eb4d4b;
     color: #ffffff;
 }
-
