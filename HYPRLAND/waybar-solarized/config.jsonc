@@ -9,7 +9,8 @@
     "custom/appmenu",
     "clock",
     "power-profiles-daemon",
-    "backlight"
+    "backlight",
+    "hyprland/language"
   ],
   "modules-center": ["custom/power", "hyprland/workspaces", "custom/noti"],
   "modules-right": [
@@ -27,6 +28,7 @@
     "tooltip": true,
     "tooltip-format": " App Launcher"
   },
+  
   "hyprland/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
@@ -41,15 +43,24 @@
       "*": 5
     }
   },
+  
+  "hyprland/language": {
+    "format": " {short}",
+    "max-length": 7,
+    "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
+  },
+  
   "tray": {
     "icon-size": 16,
     "spacing": 10
   },
+  
   "clock": {
     "format": "{:%H:%M}",
     "tooltip-format": "<big>{:%Y %B %d}</big>\n<tt><small>{calendar}</small></tt>",
     "format-alt": "{:%Y/%m/%d}"
   },
+  
   "battery": {
     "tooltip": true,
     "tooltip-format": "{timeTo}\nPower: {power}w",
