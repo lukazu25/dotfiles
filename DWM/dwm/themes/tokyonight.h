@@ -12,7 +12,10 @@ static const char col_brblk[]  = "#444b6a";  // bright black
 
 static const char *colors[][3] = {
     /*               fg       bg       border */
-    [SchemeNorm] = { col_fg,  col_bg,   col_brblk },
-    [SchemeSel]  = { col_cyn, col_bg,   col_grn   },
-    [SchemeHid]  = { col_cyn,  col_bg, col_cyn  },
+    [SchemeNorm] = { col_fg,   col_bg,   col_brblk },
+    [SchemeSel]  = { col_cyn,  col_bg,   col_cyn   },
+    [SchemeHid]  = { col_cyn,  col_bg,   col_cyn  },
 };
+
+/* For tokyonight use this dmenu */
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_bg, "-nf", col_fg, "-sb", col_cyn, "-sf", col_bg, NULL };
