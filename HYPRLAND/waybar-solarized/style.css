@@ -1,10 +1,7 @@
 @define-color bg #0c2a36;
-
-/* Colors pulled from pywal */
 @define-color foreground #a7bec4;
 @define-color background #0B151C;
 @define-color cursor #a7bec4;
-
 @define-color color0 #0B151C;
 @define-color color1 #595770;
 @define-color color2 #936177;
