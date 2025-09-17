@@ -141,6 +141,7 @@ tooltip label {
     transition-duration: 0.1s;
 }*/
 
+#language,
 #memory,
 #cpu,
 #temperature,
@@ -164,6 +165,7 @@ tooltip label {
     margin: 5px 1px 6px 1px;
 }
 
+#language:hover,
 #memory:hover,
 #cpu:hover,
 #temperature:hover,
