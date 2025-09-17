@@ -1,0 +1,138 @@
+// -*- mode: jsonc -*-
+{
+	"height": 40,
+	"width": 1880,
+	"margin-top": 10,
+
+	"modules-left": ["hyprland/workspaces", "hyprland/window"],
+	"modules-center": [],
+	"modules-right": [ "battery", "cpu", "memory", "power-profiles-daemon", "hyprland/language", "pulseaudio", "clock", "tray", "custom/notifications", "custom/power"],
+
+	"hyprland/workspaces": {
+		"format": "{icon}",
+		"on-click": "activate",
+		"format-icons": {
+			"urgent": "",
+			"active": "",
+			"default": ""
+		},
+		"tooltip": false
+	},
+
+	"hyprland/window": {
+		"format": "{class}",
+		"separate-outputs": false
+	},
+
+	"cpu": {
+		"interval": 5,
+		"format": "  {usage}%"
+	},
+
+	"memory": {
+		"interval": 10,
+		"format": "  {percentage}%"
+	},
+
+	"tray": {
+		"icon-size": 18,
+		"spacing": 5
+	},
+
+	"hyprland/language": {
+		"format": "󰌏  {short}",
+		"min-length": 7
+	},
+
+	"pulseaudio": {
+		"scroll-step": 5,
+		"format": "{icon} {volume}%",
+		"format-icons": {
+			"default": [" ", " ", " "]
+		},
+		"on-click": "pavucontrol",
+		"tooltip": false
+	},
+
+	"battery": {
+		"states": {
+			"warning": 30,
+			"critical": 15
+		},
+		"format": "{icon}  {capacity}%",
+		"format-full": "{icon}  {capacity}%",
+		"format-charging": "  {capacity}%",
+		"format-plugged": "  {capacity}%",
+		"format-alt": "{time} {icon}",
+		"format-icons": ["", "", "", "", ""]
+	},
+
+	"clock": {
+		"format": "<span color='#fab387'> </span> {:%H:%M}",
+		"tooltip-format": "<big><span color='#cdd6f4'>{:%Y %B}</span></big>\n<tt><small>{calendar}</small></tt>",
+		"format-alt": "<span color='#eba0ac'> </span> <span color='#cdd6f4'>{:%Y-%m-%d}</span>",
+
+		"calendar": {
+			"mode": "month",
+			"mode-mon-col": 3,
+			"weeks-pos": "right",
+			"on-scroll": 1,
+			"format": {
+				"months": "<span color='#cdd6f4'><b>{}</b></span>",
+				"days": "<span color='#cdd6f4'><b>{}</b></span>",
+				"weeks": "<span color='#f5c2e7'><b>W{}</b></span>",
+				"weekdays": "<span color='#f5c2e7'><b>{}</b></span>",
+				"today": "<span color='#eba0ac'><b><u>{}</u></b></span>"
+			}
+		},
+		"actions": {
+			"on-click-right": "mode",
+			"on-click-forward": "tz_up",
+			"on-click-backward": "tz_down",
+			"on-scroll-up": "shift_up",
+			"on-scroll-down": "shift_down"
+		}
+	},
+
+	"power-profiles-daemon": {
+		"format": "{icon}",
+		"tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+		"tooltip": true,
+		"format-icons": {
+			"default": "",
+			"performance": "",
+			"balanced": "",
+			"power-saver": ""
+		}
+	},
+
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{icon} {temperatureC}°C",
+        "tooltip": true,
+        "format-icons": ["", "", ""]
+    }, 
+
+    "custom/notifications": {
+		"format": "",
+		"on-click": "swaync-client -t",
+		"tooltip": false
+	},
+
+    "backlight": {
+       // "device": "intel_backlight",
+        "format": "{icon} {percent}%",
+        "format-icons": [""]
+    },
+
+    "custom/power": {
+		"format": "{icon}",
+		"format-icons": "",
+		"on-click": "~/.config/rofi/powermenu.sh",
+		"escape": true,
+		"tooltip": false
+	}
+}
