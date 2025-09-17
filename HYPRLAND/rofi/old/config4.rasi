@@ -65,7 +65,7 @@ entry {
     placeholder: "Search";
     placeholder-color: rgb(167, 190, 196);
     background-color: rgba(28, 108, 137, 0.3);
-    color: rgb(12, 42, 54);
+    color: rgb(167, 190, 196);
     cursor-color: rgba(167, 190, 196, 0.5);
     padding: 10px;
     border: 1px;
