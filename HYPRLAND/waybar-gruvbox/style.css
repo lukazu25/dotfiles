@@ -255,6 +255,7 @@ label:focus {
 
 #disk {
     background-color: #ff0000;
+    color: #282828;
 }
 
 #backlight {
@@ -263,11 +264,13 @@ label:focus {
 }
 
 #network {
-    background-color: #ff0000;
+    background-color: #d79921;
+    color: #282828;
 }
 
 #network.disconnected {
-    background-color: #ff0000;
+    background-color: #fb4934;
+	color: #282828;
 }
 
 #pulseaudio {
@@ -281,26 +284,29 @@ label:focus {
 }
 
 #wireplumber {
-    background-color: #ff0000;
-    color: #00ff00;
+    background-color: @color-widget-audio-bg;
+    color: @color-widget-audio-fg;
 }
 
 #wireplumber.muted {
-    background-color: #0000ff;
+    background-color: @color-widget-audio-muted-bg;
+	color: @color-widget-audio-muted-fg;
 }
 
 #custom-media {
-    background-color: #ff0000;
-    color: #0000ff;
+    background-color: #d65d0e;
+    color: #282828;
     min-width: 100px;
 }
 
 #custom-media.custom-spotify {
-    background-color: #00ff00;
+    background-color: #1db954;
+    color: #282828;
 }
 
 #custom-media.custom-vlc {
-    background-color: #ff0000;
+    background-color: #d65d0e;
+    color: #282828;
 }
 
 #temperature {
@@ -337,33 +343,36 @@ label:focus {
 }
 
 #mpd {
-    background-color: #ff0000;
-    color: #0000ff;
+    background-color: #d65d0e;
+    color: #282828;
 }
 
 #mpd.disconnected {
-    background-color: #00ff00;
+    background-color: #d65d0e;
+    color: #282828;
 }
 
 #mpd.stopped {
-    background-color: #ff0000;
+    background-color: #d65d0e;
+    color: #282828;
 }
 
 #mpd.paused {
-    background-color: #ffff00;
+    background-color: #d65d0e;
+    color: #282828;
 }
 
 #language {
-    background: #ff0000;
-    color: #0000ff;
+    background: #689d6a;
+    color: #282828;
     padding: 0 5px;
     margin: 0 5px;
     min-width: 16px;
 }
 
 #keyboard-state {
-    background: #0000ff;
-    color: #ff0000;
+    background: #458588;
+    color: #282828;
     padding: 0 0px;
     margin: 0 5px;
     min-width: 16px;
