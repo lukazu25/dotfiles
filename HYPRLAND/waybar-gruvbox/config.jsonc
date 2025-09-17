@@ -40,6 +40,11 @@
             "default": ""
         }
     },
+    "hyprland/language": {
+    "format": "󰌌 {short}",
+    "min-length": 5,
+    "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
+    },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
