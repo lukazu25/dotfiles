@@ -201,6 +201,16 @@ tooltip label {
     color: @background;
 }
 
+#temperature.warning {
+    background-color: @warning;
+    color: @background;
+}
+
+#temperature.critical {
+    background-color: @critical;
+    color: @background;
+}
+
 #tray menu {
     background-color: @bg;
     border: solid 1px @color3;
