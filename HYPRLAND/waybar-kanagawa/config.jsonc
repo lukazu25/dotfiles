@@ -139,7 +139,7 @@
   "backlight": {
       //  "device": "intel_backlight",
         "format": "<span color=\"#DCA561\">{icon}</span> {percent}%",
-        "format-icons": [""],
+        "format-icons": ["󰃞", "󰃟", "󰃠"],
         "tooltip-format": "Brightness: {percent}%"    
   },
 
