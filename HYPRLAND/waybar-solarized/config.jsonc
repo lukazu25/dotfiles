@@ -194,6 +194,7 @@
   },
 
   "temperature": {
+    "warning-threshold": 70,
     "critical-threshold": 80,
     "format": "{icon} {temperatureC}°C",
     "tooltip": true,
