@@ -1,121 +1,155 @@
-@import url("colors/catppucin.css");
+@import url("colors/solarized.css");
 
+/* === Global Defaults === */
 * {
     outline: none;
-    font-family: "Adwaita Sans";
-    font-size: 18px;
+    font-family: "JetBrainsMono Nerd Font propo", "Adwaita Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
     text-shadow: none;
     color: @foreground;
     background-color: transparent;
-    background: transparent;
+    transition: all 0.3s ease;
 }
 
+/* === Control Center === */
 .control-center {
-    background-color: alpha(@background, 0.8);
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.65);
-    padding: 5px;
+    background-color: alpha(@background, 0.85);
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    padding: 12px;
+    margin: 10px;
 }
 
 .control-center .notification-row .notification-background {
-    border-radius: 15px;
-    margin-top: 5px;
+    border-radius: 12px;
+    margin: 8px 4px;
+    padding: 8px;
+    background-color: alpha(@background, 0.9);
 }
 
+/* === Notifications === */
 .notification {
-    background-color: alpha(@background, 0.8);
-}
-.notification > *:last-child > *  {
-    margin: 5px;
+    background-color: alpha(@background, 0.9);
+    border-radius: 12px;
+    padding: 10px;
 }
 
-.summary { font-size: 1.1rem; }
-.time { font-size: 0.8rem; }
-.body { font-size: 1rem; }
+.notification > *:last-child > * {
+    margin: 6px;
+}
 
 .notification-content {
-    padding: 15px 10px 10px 20px;
+    padding: 12px 16px;
+}
+
+.summary {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.time {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.body {
+    font-size: 1rem;
 }
 
 .notification-action > button {
-    padding: unset;
-    margin: unset;
+    padding: 6px 12px;
+    margin: 4px;
+    border-radius: 8px;
+    background-color: alpha(@gray, 0.8);
 }
-.notification-action > label {
-    font-size: 1rem;
-    font-weight: normal;
+.notification-action > button:hover {
+    background-color: alpha(@blue, 0.9);
 }
 
 .notification.critical {
-    background-color: alpha(#e64553, 0.5);
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.65);
+    background-color: alpha(@red, 0.3);
+    border: 2px solid @red;
+    box-shadow: 0 2px 8px rgba(230, 69, 83, 0.3);
 }
 .notification.low,
-.notification.normal  {
-    background-color: alpha(@background, 0.5);
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.65);
+.notification.normal {
+    background-color: alpha(@background, 0.7);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .close-button {
-    background-color: alpha(@gray, 0.8);
-    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.35);
+    background-color: alpha(@gray, 0.9);
+    border-radius: 8px;
+    padding: 4px 8px;
 }
 .close-button:hover {
-    background-color: alpha(@red, 0.8);
+    background-color: alpha(@red, 0.9);
+    box-shadow: 0 2px 6px rgba(230, 69, 83, 0.3);
 }
 
+/* === Notification Groups === */
 .notification-group-header,
 .notification-group-icon {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    font-weight: 500;
 }
 .notification-group-collapse-button,
 .notification-group-close-all-button {
-    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.35);
-    background-color: @gray;
+    background-color: alpha(@gray, 0.8);
+    border-radius: 8px;
+    padding: 4px 8px;
 }
 .notification-group-collapse-button:hover {
-    background-color: alpha(@blue, 0.8);
+    background-color: alpha(@blue, 0.9);
 }
 .notification-group-close-all-button:hover {
-    background-color: alpha(@red, 0.8);
+    background-color: alpha(@red, 0.9);
 }
 
+/* === Scales and Sliders === */
 trough highlight {
     background: @blue;
 }
 scale trough {
-    margin: 0rem 1rem;
-    background-color: @gray;
-    min-height: 8px;
-    min-width: 70px;
+    margin: 0 12px;
+    background-color: alpha(@gray, 0.5);
+    min-height: 6px;
+    min-width: 80px;
+    border-radius: 4px;
 }
 slider {
     background-color: @foreground;
-}
-tooltip {
-    background-color: @gray;
+    border-radius: 20px;
 }
 
-/*** Widgets ***/
+/* === Tooltip === */
+tooltip {
+    background-color: alpha(@gray, 0.95);
+    border-radius: 8px;
+    padding: 4px 8px;
+}
+
+/* === Widgets === */
+
+/* Buttons Grid */
 .widget-buttons-grid {
-    font-size: 1rem;
-    padding: 20px 20px 10px;
-    margin: unset;
+    padding: 16px;
+    margin: 8px;
 }
 .widget-buttons-grid > flowbox > flowboxchild > button {
-    background: @gray;
-    box-shadow: 0px 0px 10px alpha(@background, 0.8);
-    border-radius: 12px;
-    min-width: 60px;
-    min-height: 30px;
-    padding: 6px;
-    margin: 3px 5px 6px 0;
-    transition: all .3s ease;
-    color: @foreground;
-    font-size: 1.3rem;
+    background: alpha(@gray, 0.8);
+    border-radius: 10px;
+    min-width: 64px;
+    min-height: 64px;
+    padding: 8px;
+    margin: 4px;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 .widget-buttons-grid > flowbox > flowboxchild > button:hover {
-    background: @select;
-    box-shadow: 0px 0px 15px alpha(@select, 0.5);
+    background: alpha(@blue, 0.9);
+    box-shadow: 0 4px 10px rgba(0, 0, 255, 0.2);
 }
 .widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked {
     background: @blue;
@@ -123,117 +157,118 @@ tooltip {
 .widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked:hover {
     background: alpha(@blue, 0.8);
 }
-/* Optional critical button highlight */
-.widget-buttons-grid > flowbox > flowboxchild > button[label=""],
-.widget-buttons-grid > flowbox > flowboxchild > button[label=""],
-.widget-buttons-grid > flowbox > flowboxchild > button[label="󰗽"] {
-    background: alpha(@red, 0.6);
+
+/* Label-specific styles (make sure labels match your JSON config) */
+.widget-buttons-grid > flowbox > flowboxchild > button[label="📶 Wi-Fi"],
+.widget-buttons-grid > flowbox > flowboxchild > button[label="🔵 Bluetooth"],
+.widget-buttons-grid > flowbox > flowboxchild > button[label="🎤 Mic"],
+.widget-buttons-grid > flowbox > flowboxchild > button[label="🔇 Mute"] {
+    background: alpha(@gray, 0.8);
 }
-.widget-buttons-grid > flowbox > flowboxchild > button[label=""]:hover,
-.widget-buttons-grid > flowbox > flowboxchild > button[label=""]:hover,
-.widget-buttons-grid > flowbox > flowboxchild > button[label="󰗽"]:hover {
-    background: alpha(@red, 0.8);
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+.widget-buttons-grid > flowbox > flowboxchild > button[label="📶 Wi-Fi"]:hover,
+.widget-buttons-grid > flowbox > flowboxchild > button[label="🔵 Bluetooth"]:hover,
+.widget-buttons-grid > flowbox > flowboxchild > button[label="🎤 Mic"]:hover,
+.widget-buttons-grid > flowbox > flowboxchild > button[label="🔇 Mute"]:hover {
+    background: alpha(@blue, 0.9);
 }
 
-/* Mpris widget */
-@define-color mpris-album-art-overlay rgba(0, 0, 0, 0.55);
-@define-color mpris-button-hover rgba(0, 0, 0, 0.5);
+/* MPRIS Widget */
+@define-color mpris-album-art-overlay rgba(0, 0, 0, 0.6);
+@define-color mpris-button-hover rgba(0, 0, 0, 0.4);
 
 .widget-mpris .widget-mpris-player {
-    padding: 16px;
-    margin: 16px 20px;
+    padding: 12px;
+    margin: 12px 16px;
     background-color: @mpris-album-art-overlay;
     border-radius: 12px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.65);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 .widget-mpris .widget-mpris-player .widget-mpris-album-art {
     border-radius: 12px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.65);
 }
 .widget-mpris .widget-mpris-player .widget-mpris-title {
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin: 0px 8px 8px 8px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 8px;
 }
 .widget-mpris .widget-mpris-player .widget-mpris-subtitle {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+.widget-mpris .widget-mpris-player > box > button {
+    border-radius: 8px;
+    padding: 6px;
 }
 .widget-mpris .widget-mpris-player > box > button:hover {
     background-color: @mpris-button-hover;
 }
-.widget-mpris > box > button:hover {
-    background: alpha(@select, 0.6);
-}
 
-/* Volume widget */
+/* Volume Widget */
 .widget-volume {
-    padding: 6px 5px 5px 5px;
-    margin: unset;
-    font-size: 1.3rem;
+    padding: 8px 12px;
+    margin: 8px;
+    font-size: 1.1rem;
 }
 .widget-volume > box > button {
     border: none;
+    padding: 6px;
+    border-radius: 8px;
 }
 .per-app-volume {
-    padding: 4px 8px 8px 8px;
-    margin: 0px 8px 8px 8px;
+    padding: 6px 12px;
+    margin: 4px 8px;
 }
 
-/* Backlight widget */
+/* Backlight Widget */
 .widget-backlight {
-    padding: 0 0 3px 16px;
-    margin: unset;
+    padding: 8px 12px;
+    margin: 8px;
     font-size: 1.1rem;
 }
 
-/* DND widget */
+/* Do Not Disturb Widget */
 .widget-dnd {
-    font-weight: bold;
-    margin: unset;
-    padding: 20px 15px 15px 15px;
+    font-weight: 600;
+    padding: 12px 16px;
+    margin: 8px;
 }
 .widget-dnd > switch {
-    font-size: initial;
-    border-radius: 100px;
-    background: @yellow;
-    border: none;
-    box-shadow: none;
-    padding: 3px;
+    border-radius: 16px;
+    background: alpha(@gray, 0.8);
+    padding: 4px;
 }
 .widget-dnd > switch:checked {
     background: @green;
 }
 .widget-dnd > switch slider {
-    background: @background;
+    background: @foreground;
     border-radius: 12px;
-    min-width: 18px;
-    min-height: 18px;
+    min-width: 20px;
+    min-height: 20px;
 }
 
-/* Title widget */
+/* Title Widget */
 .widget-title {
-    padding: unset;
-    margin: unset;
-    font-weight: bold;
-    padding: 15px;
+    padding: 12px 16px;
+    margin: 8px;
+    font-weight: 600;
 }
 .widget-title > label {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
 }
 .widget-title > button {
-    padding:unset;
-    margin:unset;
-    text-shadow: none;
-    background: #e64553;
-    border: none;
-    box-shadow: none;
-    border-radius: 100px;
-    padding:0px 6px;
-    transition: all .7s ease;
+    background: alpha(@red, 0.9);
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 1rem;
 }
 .widget-title > button:hover {
-    background: alpha(@red, 0.8);
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.65);
+    background: @red;
+    box-shadow: 0 2px 6px rgba(230, 69, 83, 0.3);
 }
 
+/* Notifications Widget */
+.widget-notifications {
+    padding: 12px;
+    margin: 8px;
+}
