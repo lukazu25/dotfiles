@@ -1,6 +1,7 @@
 @define-color bg #0c2a36;
 @define-color foreground #a7bec4;
 @define-color background #0B151C;
+@define-color warning #a87034;
 @define-color critical #a14b4b;
 @define-color cursor #a7bec4;
 @define-color color0 #0B151C;
@@ -188,6 +189,11 @@ tooltip label {
 
 #custom-noti {
     font-size: 20px;
+}
+
+#battery.warning {
+    background-color: @warning; 
+    color: @background;   
 }
 
 #battery.critical {
