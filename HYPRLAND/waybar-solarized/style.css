@@ -193,7 +193,6 @@ tooltip label {
 #battery.critical {
     background-color: @critical;
     color: @background;
-    font-weight: bold;
 }
 
 #tray menu {
