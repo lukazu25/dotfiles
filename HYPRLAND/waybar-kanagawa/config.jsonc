@@ -24,7 +24,6 @@
     "format-full": "<span color=\"#DCA561\">{icon}</span> {capacity}%",
     "format-charging": "<span color=\"#DCA561\"></span> {capacity}%",
     "format-plugged": "<span color=\"#DCA561\"></span> {capacity}%",
-    "format-alt": "<span color=\"#DCA561\">{icon}</span> {time}",
     "format-icons": ["", "", "", "", ""]
   },
   "hyprland/window": {
