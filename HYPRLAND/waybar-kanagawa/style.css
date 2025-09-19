@@ -251,6 +251,10 @@ button:hover {
     color: @foreground;
 }
 
+#battery.critical {
+    color: @red;
+}
+
 /* Temperature */
 #temperature {
     background-color: @background;
@@ -259,6 +263,10 @@ button:hover {
     border-radius: 10px;
     font-weight: 700;
     margin-right: 5px;
+}
+
+#temperature.critical {
+    color: @red;
 }
 
 /* Network */
