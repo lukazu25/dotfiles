@@ -1,0 +1,32 @@
+# Alacritty Configuration (YAML format)
+
+colors:
+  primary:
+    background: '#0f111a'  # Dark blue background
+    foreground: '#d0e7ff'  # Light blueish text
+
+  normal:
+    black:   '#1b1d2b'  # Darker black
+    red:     '#f38ba8'  # Soft pinkish-red
+    green:   '#a6e3a1'  # Light green
+    yellow:  '#f9e2af'  # Light yellow
+    blue:    '#82aaff'  # Soft blue
+    magenta: '#cba6f7'  # Light magenta
+    cyan:    '#89dceb'  # Soft cyan
+    white:   '#d0e7ff'  # Light text
+
+  bright:
+    black:   '#2e3440'  # Slightly lighter black
+    red:     '#f38ba8'  # Soft pinkish-red
+    green:   '#a6e3a1'  # Light green
+    yellow:  '#f9e2af'  # Light yellow
+    blue:    '#89b4fa'  # Slightly brighter blue
+    magenta: '#cdd6f4'  # Lighter magenta
+    cyan:    '#94e2d5'  # Slightly brighter cyan
+    white:   '#ffffff'  # Pure white
+
+font:
+  normal:
+    family: 'JetBrainsMono Nerd Font'
+    style:  'Regular'
+  size: 14.0
