@@ -12,6 +12,10 @@ copy rofi folder to rofi directory
 ```bash
 sudo cp -r rofi/* ~/.config/rofi/
 ```
+copy wofi folder to wofi directory
+```bash
+sudo cp -r wofi/* ~/.config/wofi/
+```
 copy swaync folder to swaync directory
 ```bash
 sudo cp -r swaync/* ~/.config/swaync/
