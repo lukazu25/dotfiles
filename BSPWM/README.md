@@ -6,6 +6,10 @@ sudo cp bspwmrc ~/.config/bspwm/
 ```bash
 sudo cp polybar/* ~/.config/polybar/
 ```
+copy rofi folder to rofi directory
+```bash
+sudo cp rofi/* ~/.config/rofi/
+```
 copy sxhkdrc config to sxhkd directory
 ```bash
 sudo cp sxhdrc ~/.config/sxhkd/
