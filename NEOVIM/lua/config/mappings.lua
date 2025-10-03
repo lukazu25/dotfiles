@@ -1,0 +1,71 @@
+local noarrows = true
+
+-- Leader keys
+vim.keymap.set('n', '<leader>l', '<cmd>Lazy home<CR>', { desc = 'Open Lazy main menu' })
+vim.keymap.set('n', '<leader>y', '"*y', { desc = 'Yank to system clipboard' })
+vim.keymap.set('n', '<leader>Y', '"*Y', { desc = 'Yank line to system clipboard' })
+vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Substitute word under cursor' })
+
+-- Buffer switching
+vim.keymap.set('n', 'gn', '<cmd>bnext<cr>', { desc = 'Next buffer' })
+vim.keymap.set('n', 'gp', '<cmd>bprev<cr>', { desc = 'Previous buffer' })
+vim.keymap.set('n', 'gd', '<cmd>bdelete<cr>', { desc = 'Delete buffer' })
+
+-- Improved J
+vim.keymap.set('n', 'J', 'mzJ`z', { desc = 'Join line with next' })
+
+-- Improved scrolling
+vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Scroll down and center' })
+vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Scroll up and center' })
+
+-- Improved next match
+vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Next search result and center' })
+vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Previous search result and center' })
+
+-- Stuff for convenience
+vim.keymap.set('n', '<C-Return>', 'o<Esc>', { desc = 'New line at end' })
+vim.keymap.set('n', '<C-,>', 'A,<Esc>', { desc = 'Comma at end' })
+vim.keymap.set('n', '==', 'gg=G', { desc = 'Reindent file' })
+
+-- Window management remaps
+vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move to left window' })
+vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move to below window' })
+vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move to above window' })
+vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move to right window' })
+
+vim.keymap.set('n', '<C-S-h>', '<cmd>vertical resize +6<CR>', { desc = 'Resize window left' })
+vim.keymap.set('n', '<C-S-j>', '<cmd>resize +3<CR>', { desc = 'Resize window down' })
+vim.keymap.set('n', '<C-S-k>', '<cmd>resize -3<CR>', { desc = 'Resize window up' })
+vim.keymap.set('n', '<C-S-l>', '<cmd>vertical resize -6<CR>', { desc = 'Resize window right' })
+
+vim.keymap.set('v', 'J', ':m \'>+1<CR>gv=gv', { desc = 'Move line down' })
+vim.keymap.set('v', 'K', ':m \'<-2<CR>gv=gv', { desc = 'Move line up' })
+vim.keymap.set('v', '<leader>y', '"*y', { desc = 'Yank to system clipboard' })
+
+vim.keymap.set('i', 'jj', '<Esc>', { desc = 'Escape insert mode' })
+
+function _G.run_code()
+  -- Save current file
+  vim.cmd('w')
+
+  -- Define the filetype
+  local filetype = vim.bo.filetype
+  local filename = vim.fn.expand('%')
+  local command
+
+  if filetype == 'python' then
+    command = 'python3 ' .. filename
+  elseif filetype == 'javascript' then
+    command = 'node ' .. filename
+  elseif filetype == 'c' then
+    local output = vim.fn.expand('%:r')  -- Filename without extension
+    command = 'gcc ' .. filename .. ' -o ' .. output .. ' && ./' .. output
+  else
+    print("Not configured")
+    return
+  end
+
+  vim.cmd('!' .. command)
+end
+
+vim.keymap.set('n', '<leader>r', run_code)
