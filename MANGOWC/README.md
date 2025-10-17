@@ -16,7 +16,7 @@ sudo pacman -Sy kitty wl-clipboard rofi grim slurp swaybg firefox ttf-jetbrains-
 ## NixOS
 
 For NixOS, you'll need to add MangoWC as a flake input to your configuration.
-First, add the flake input to your =flake.nix=:
+First, add the flake input to your `flake.nix`:
 
 ```
 {
@@ -40,7 +40,7 @@ First, add the flake input to your =flake.nix=:
 }
 ```
 
-Then enable MangoWC in your =configuration.nix=:
+Then enable MangoWC in your `configuration.nix`:
 
 ```
 { config, pkgs, ... }:
@@ -73,6 +73,26 @@ sudo nixos-rebuild switch --flake .#your_hostname
 ## Gentoo
 
 For Gentoo users, you'll need to add MangoWC via an overlay or manually compile it.
+
+The package is in the community-maintained repository called GURU.
+First, add GURU repository:
+
+```
+emerge --ask --verbose eselect-repository
+eselect repository enable guru
+emerge --sync guru
+```
+
+Then, add `gui-libs/scenefx` and `gui-wm/mangowc` to the `package.accept_keywords`.
+
+Finally, install the package:
+
+```
+emerge --ask --verbose gui-wm/mangowc
+```
+
+If you want to manually compile it 
+
 First, install the dependencies:
 
 ```
