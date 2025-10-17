@@ -16,7 +16,7 @@ sudo pacman -Sy kitty wl-clipboard rofi grim slurp swaybg firefox ttf-jetbrains-
 ## NixOS
 
 For NixOS, you'll need to add MangoWC as a flake input to your configuration.
-First, add the flake input to your `flake.nix`:
+First, add the flake input to your `flake.nix`
 
 ```
 {
@@ -40,7 +40,7 @@ First, add the flake input to your `flake.nix`:
 }
 ```
 
-Then enable MangoWC in your `configuration.nix`:
+Then enable MangoWC in your `configuration.nix`
 
 ```
 { config, pkgs, ... }:
