@@ -35,19 +35,8 @@ tooltip {
 #keyboard-state,
 #custom-notification,
 #custom-power {
-    background: rgba(40, 40, 40, 0.76); 
-    color: #ddca9e; 
-    padding: 0 10px;
-    margin: 4px 2px 0 2px;
-    border-radius: 4px; 
-    border-width: 2px;
-    border-style: solid;
-    border-color: #c9b890; 
-}
-
-#window {
     background: rgba(40, 40, 40, 0.76);
-    color: #ddca9e; 
+    color: #ddca9e;
     padding: 0 10px;
     margin: 4px 2px 0 2px;
     border-radius: 4px;
@@ -56,11 +45,22 @@ tooltip {
     border-color: #c9b890;
 }
 
+#window {
+    background: rgba(40, 40, 40, 0.76);
+    color: #ddca9e;
+    padding: 0 10px;
+    margin: 4px 2px 0 2px;
+    border-radius: 4px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #c9b890;
+}
 
 #workspaces {
     background: rgba(40, 40, 40, 0.76);
-    padding: 4px 10px 4px 10px;
-    margin: 4px 2px 0 0; 
+    color: #ddca9e;
+    padding: 5px 10px 5px 10px;
+    margin: 4px 2px 0 2px;
     border-radius: 4px;
     border-width: 2px;
     border-style: solid;
@@ -70,9 +70,11 @@ tooltip {
 #workspaces button {
     border: none;
     background: none;
+    box-shadow: inherit;
+    text-shadow: inherit;
     color: #ddca9e;
-    padding: 1px;
-    margin: 0 2px 0 0;
+    padding: 0 4px;
+    margin: 0;
 }
 
 #workspaces button.hidden {
@@ -88,19 +90,18 @@ tooltip {
     color: #d79921;
 }
 
+#workspaces button.active,
+#workspaces button.urgent {
+    color: #282828;
+    border-radius: 3px;
+    padding: 0 4px;
+    margin: 0;
+}
+
 #workspaces button.active {
     background-color: #ddca9e;
-    color: #282828;
-    margin: 0; 
-    border-radius: 3px;
 }
 
 #workspaces button.urgent {
     background-color: #ef5e5e;
-    color: #282828;
-    margin: 0; 
-    border-radius: 3px;
 }
-
-
-
