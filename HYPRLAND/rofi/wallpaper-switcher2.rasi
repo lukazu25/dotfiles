@@ -1,0 +1,121 @@
+configuration {
+    show-icons: true;
+    terminal: "kitty";
+    drun-display-format: "{icon} {name}";
+    run-display-format: " {name}";
+    disable-history: true;
+    click-to-exit: true;
+    hover-select: true;
+}
+
+window {
+    transparency: "real";  
+    location: center;
+    anchor: center;
+    width: 800px;
+    height: 47%;
+    background-color: rgba(12, 42, 54, 0.85);
+    border-radius: 10px;
+    border: 2px;
+    border-color: rgba(28, 108, 137, 0.8);
+}
+
+mainbox {
+    enabled: true;
+    spacing: 0px;
+    background-color: transparent;
+    orientation: vertical;
+    children: [ "inputbar", "listbox" ];
+}
+
+inputbar {
+    enabled: true;
+    spacing: 5px;
+    padding: 10px;
+    background-color: transparent;
+    text-color: rgb(167, 190, 196);
+    orientation: horizontal;
+    children: [ "prompt", "textbox-prompt-colon", "entry" ];
+}
+
+prompt {
+    font: "JetBrainsMono Nerd Font 12";
+    background-color: rgba(28, 108, 137, 1);
+    text-color: #0b151c;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px;
+    border-color: rgba(28, 108, 137, 1);
+}
+
+textbox-prompt-colon {
+    enabled: false;
+}
+
+entry {
+    enabled: true;
+    placeholder: "Search";
+    placeholder-color: rgb(167, 190, 196);
+    background-color: rgba(28, 108, 137, 0.3);
+    color: rgb(167, 190, 196);
+    cursor-color: rgba(167, 190, 196, 0.5);
+    padding: 10px;
+    border: 1px;
+    border-color: rgba(28, 108, 137, 0.8);
+    border-radius: 5px;
+    font: "JetBrainsMono Nerd Font 12";
+}
+
+listbox {
+    spacing: 10px;
+    padding: 10px;
+    background-color: transparent;
+    orientation: vertical;
+    children: [ "message", "listview" ];
+}
+
+listview {
+    enabled: true;
+    padding: 5px;
+    background-color: rgba(12, 42, 54, 0.8);
+    scrollbar: false;
+    border: 5px;
+    border-color: rgba(28, 108, 137, 0.3);
+    border-radius: 10px;
+    cycle: true;
+    dynamic: true;
+}
+
+element {
+    background-color: rgba(28, 108, 137, 0.8);
+    spacing: 1px;
+    padding: 5px;
+    border-color: rgba(28, 108, 137, 0.3);
+}
+
+element.normal.normal,
+element.alternate.normal {
+    background-color: transparent;
+    color: rgb(167, 190, 196);
+}
+
+element.selected.normal {
+    background-color: rgba(28, 108, 137, 0.3);
+    border: 1px;
+    border-color: rgba(28, 108, 137, 0.8);
+    border-radius: 10px;
+}
+
+element-icon {
+    enabled: true;
+    size: 48px;
+    background-color: transparent;
+}
+
+element-text {
+    enabled: true;
+    padding: 10px;
+    font: "JetBrainsMono Nerd Font 12";
+    background-color: transparent;
+    text-color: rgb(167, 190, 196);
+}
