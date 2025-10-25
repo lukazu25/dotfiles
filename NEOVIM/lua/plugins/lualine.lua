@@ -23,9 +23,14 @@ return {
         }
       },
       sections = {
+        -- The lualine_a section using the fmt function:
         lualine_a = {
           {
             'mode',
+            -- This fmt function formats the mode string to only show the first character
+           -- fmt = function(res)
+             -- return res:sub(1, 1)
+           -- end,
             icon = '',
             separator = { left = '', right = '' },
             padding = { left = 1, right = 1 },
@@ -48,7 +53,6 @@ return {
             padding = { left = 1, right = 1 },
           },
         },
-
         lualine_c = {
           { 'filename' }
         },
@@ -60,7 +64,6 @@ return {
             padding = { left = 1, right = 1 },
           }
         },
-
         lualine_z = {
           {
             'location',
