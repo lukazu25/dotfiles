@@ -8,9 +8,7 @@
 
   # 2. Packages: User-specific tools, installed without affecting the system
   home.packages = with pkgs; [
-    neovim  
-    tmux     
-    htop     
+    home-manager    
   ];
 
   # 3. Configuration: Declaratively manage dotfiles (like .bashrc)
@@ -18,6 +16,7 @@
     enable = true;
     shellAliases = {
       nrs = "sudo nixos-rebuild switch --flake /etc/nixos#my-laptop";
+      hms = "home-manager switch --flake /etc/nixos#asus"; 
       ll = "ls -alF";  
       la = "ls -A";   
       l  = "ls -CF"; 
