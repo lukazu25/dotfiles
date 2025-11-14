@@ -15,8 +15,8 @@
    programs.bash = {
     enable = true;
     shellAliases = {
-      nrs = "sudo nixos-rebuild switch --flake /etc/nixos#my-laptop";
-      hms = "home-manager switch --flake /etc/nixos#asus"; 
+      nrs = "sudo nixos-rebuild switch --flake /etc/nixos";
+      hms = "home-manager switch --flake /etc/nixos"; 
       ll = "ls -alF";  
       la = "ls -A";   
       l  = "ls -CF"; 
