@@ -26,7 +26,7 @@
 
       modules = [
         # Path to your separate Home Manager configuration file
-        ./home.nix 
+        ./users/asus/home.nix 
         # (Assuming you created a /etc/nixos/home.nix file)
       ];
     };
