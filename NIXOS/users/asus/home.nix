@@ -8,7 +8,8 @@
 
   # 2. Packages: User-specific tools, installed without affecting the system
   home.packages = with pkgs; [
-    home-manager    
+    # Your tools here
+    # htop neovim tmux tree 
   ];
 
   # 3. Configuration: Declaratively manage dotfiles (like .bashrc)
