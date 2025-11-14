@@ -32,7 +32,7 @@
     };
 
     # Define your NixOS configuration (you can define multiple machines here)
-    nixosConfigurations.my-laptop = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         # Import the core system configuration
