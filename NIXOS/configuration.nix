@@ -96,14 +96,6 @@
     ];
   };
 
-  # Home Manager 
-  home-manager.users.asus = {
-    # Point to the user-specific configuration file
-    imports = [
-      ./users/asus/home.nix
-    ];
-  };
-
   # Install firefox.
   programs.firefox.enable = true;
 
