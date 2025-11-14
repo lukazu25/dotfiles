@@ -9,5 +9,5 @@ sudo cp -r NIXOS/* /etc/nixos
 rebuild the system
 
 ```bash
-sudo nixos-rebuild switch --flake /etc/nixos#my-laptop
+sudo nixos-rebuild switch --flake /etc/nixos
 ```
