@@ -21,13 +21,16 @@
     
     
     # This must be a top-level attribute in the 'outputs' set.
-    homeConfigurations."asus" = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations.asus = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux; # Must match your system's architecture
 
       modules = [
-        # Path to your separate Home Manager configuration file
-        ./users/asus/home.nix 
-        # (Assuming you created a /etc/nixos/home.nix file)
+        # Explicit identity for 'asus' is required here
+        {
+          home.username = "asus";
+          home.homeDirectory = "/home/asus";
+        }
+        ./users/asus/home.nix # Asus's specific configuration file
       ];
     };
 
