@@ -18,23 +18,25 @@
 
   # 2. Outputs: Define what this flake provides
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+    
+    
+    # This must be a top-level attribute in the 'outputs' set.
+    homeConfigurations."asus" = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.x86_64-linux; # Must match your system's architecture
+
+      modules = [
+        # Path to your separate Home Manager configuration file
+        ./home.nix 
+        # (Assuming you created a /etc/nixos/home.nix file)
+      ];
+    };
+
     # Define your NixOS configuration (you can define multiple machines here)
     nixosConfigurations.my-laptop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         # Import the core system configuration
         ./configuration.nix
-
-      # Define Home Manager configuration 
-    homeConfigurations."asus" = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux; # Must match your system's architecture
-
-      modules = [
-        # Path to your separate Home Manager configuration file
-        ./home.nix
-      ];
-    };
-
       ];
     };
   };
