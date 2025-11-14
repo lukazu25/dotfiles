@@ -25,8 +25,16 @@
         # Import the core system configuration
         ./configuration.nix
 
-        # Import the Home Manager module for system integration
-        home-manager.nixosModules.home-manager
+      # Define Home Manager configuration 
+    homeConfigurations."asus" = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.x86_64-linux; # Must match your system's architecture
+
+      modules = [
+        # Path to your separate Home Manager configuration file
+        ./home.nix
+      ];
+    };
+
       ];
     };
   };
