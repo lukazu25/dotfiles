@@ -1,0 +1,22 @@
+set nocompatible
+set encoding=utf-8
+set number 
+set relativenumber
+syntax on
+filetype plugin indent on
+set autoindent
+set smartindent
+set expandtab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set splitbelow
+set noswapfile
+set noundofile
+set nobackup
+set nowritebackup
+set clipboard=unnamedplus

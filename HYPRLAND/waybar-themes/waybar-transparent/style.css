@@ -1,0 +1,82 @@
+#waybar {
+    background: transparent;
+}
+
+* {
+    color: white;
+    border-radius: 10px;
+    padding: 0;
+    margin: 0;
+    font-family: "JetBrainsMono Nerd Font Propo";
+    font-size: 16px;
+}
+
+#workspaces,
+#clock,
+#power-profiles-daemon,
+#battery,
+#cpu,
+#network,
+#pulseaudio,
+#memory,
+#custom-shutdown,
+#mpris,
+#custom-notifications,
+#backlight,
+#temperature,
+#language,
+#tray {
+    border: 1px rgba(255, 255, 255, 0.3) solid;
+    padding: 1px 10px;
+    background: rgba(0, 0, 0, 0.15);
+    transition: all 300ms cubic-bezier(0.38, 1.21, 0.22, 1);
+}
+
+#workspaces button {
+    margin: 0 1px;
+    padding: 0 4px;
+    border: 1px solid transparent; 
+}
+
+#workspaces button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid transparent; 
+    box-shadow: none;
+    outline: none;
+}
+
+#power-profiles-daemon:hover,
+#clock:hover,
+#battery:hover,
+#cpu:hover,
+#network:hover,
+#pulseaudio:hover,
+#memory:hover,
+#mpris:hover,
+#custom-notifications:hover,
+#backlight:hover,
+#temperature:hover,
+#language:hover {
+    border: 1px rgba(255, 255, 255, 0.7) solid;
+    padding: 1px 15px;
+    border-radius: 20px;
+}
+
+#custom-shutdown:hover {
+    border: 1px rgba(255, 255, 255, 0.5) solid;
+    color: #d80000;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+}
+
+#temperature.critical,
+#battery.critical,
+#memory.critical,
+#cpu.critical {
+    color: #d80000;
+}
+
+#battery.warning {
+    color: orange;
+}
+
