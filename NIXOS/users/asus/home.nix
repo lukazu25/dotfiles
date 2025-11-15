@@ -5,6 +5,7 @@
 {
   # 1. Required: Define the system version (should match flake/NixOS version)
   home.stateVersion = "25.05";
+  home-manager.backupFileExtension = "backup";
 
   # 2. Packages: User-specific tools, installed without affecting the system
   home.packages = with pkgs; [
