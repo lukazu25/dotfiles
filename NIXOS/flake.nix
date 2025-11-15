@@ -1,7 +1,7 @@
 # /etc/nixos/flake.nix
 
 {
-  description = "ASUS's reproducible NixOS setup";
+  description = "NixOS System Flake";
 
   # 1. Inputs: Define external sources and lock them down
   inputs = {
