@@ -1,3 +1,84 @@
+# Compile From Source
+
+## Prerequisites
+
+Ensure you have the following tools installed:
+
+- `make`
+- `gcc` or `clang`
+- `libc6-dev`
+- `texinfo`
+- Development libraries: `libgccjit-dev`, `libgnutls-dev`, `libxml2-dev`, `libncurses5-dev`, `libjansson-dev`, `libgtk3.0-dev`, `libx11-dev`, `libxpm-dev`, `libjpeg-dev`, `libpng-dev`, `libgif-dev`, `libtiff-dev`, `libtree-sitter-dev`, `imagemagick-dev`, `libcairo-dev`.
+
+## Downloading emacs Source-Code
+
+```
+wget -c https://ftp.gnu.org/pub/gnu/emacs/emacs-VERSION.tar.xz
+tar -axvf emacs-VERSION.tar.xz
+cd emacs-VERSION
+```
+(Replace ‘VERSION’ with the relevant version number, e.g., ‘28.1’.)
+
+
+## Configure the Build
+
+The `./configure` script prepares the source code for compilation based on your system and desired features. This is the most critical step for customization.
+
+You should also specify an installation location, typically `/usr/local`, using `--prefix`.
+
+**Basic Configuration (Recommended):**
+
+```
+./configure \
+    --prefix=/usr/local \
+    --with-native-compilation \
+    --with-tree-sitter \
+    --with-json \
+    --with-x-toolkit=gtk3 \
+    --with-imagemagick \
+    --with-gnutls \
+    --with-pgtk \
+    --with-mailutils
+```
+
+Note: The exact flags and necessary development libraries may vary based on your distribution and version. Use `./configure --help` to see all available options.
+
+## Compile the Source
+
+Once configuration is complete, compile Emacs using `make`. You can speed up the process by using multiple processor cores (e.g., using `$(nproc)` or the number of cores on your system with the `-j` flag).
+
+```
+make -j$(nproc)
+```
+
+## Install Emacs
+
+After a successful compilation, install the Emacs binary and runtime files to the directory specified by `--prefix` (usually `/usr/local`). This step requires root privileges.
+
+```
+sudo make install
+```
+
+## Verification
+
+To confirm that your new version of Emacs is installed and includes the features you selected, run the following command:
+
+```
+emacs --version
+```
+
+## Cleaning Up (Optional)
+
+You can remove the compiled object files and temporary data from the source directory, although it is not strictly necessary.
+
+```
+make clean
+```
+
+If you installed Emacs to a custom location, you may need to update your system's `PATH` environment variable to ensure the new Emacs binary is found before any old versions. The new binary will typically be located at `/usr/local/bin/emacs`.
+
+
+
 # EXWM (Emacs X Window Manager)
 
 # Installation Guide
