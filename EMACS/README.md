@@ -10,7 +10,7 @@ Ensure you have the following tools installed:
 - `gcc` or `clang`
 - `libc6-dev`
 - `texinfo`
-- Development libraries: `libgccjit-dev`, `libgnutls-dev`, `libxml2-dev`, `libncurses5-dev`, `libjansson-dev`, `libgtk3.0-dev`, `libx11-dev`, `libxpm-dev`, `libjpeg-dev`, `libpng-dev`, `libgif-dev`, `libtiff-dev`, `libtree-sitter-dev`, `imagemagick-dev`, `libcairo-dev`.
+- Development libraries: `libgccjit-dev`, `libgnutls-dev`, `libxml2-dev`, `libncurses5-dev`, `libjansson-dev`, `libgtk3.0-dev`, `libx11-dev`, `libxpm-dev`, `libjpeg-dev`, `libpng-dev`, `libgif-dev`, `libtiff-dev`, `libtree-sitter-dev`, `imagemagick-dev`, `libcairo-dev`, `libmailutils-dev`.
 
 ## Downloading emacs Source-Code
 
