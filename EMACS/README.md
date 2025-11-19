@@ -81,7 +81,7 @@ If you installed Emacs to a custom location, you may need to update your system'
 
 ## Update Emacs
 
-Navigate to the vim directory
+Navigate to the Emacs directory
 
 ```
 cd /path/to/emacs
@@ -141,6 +141,7 @@ emacs --version
 ```
 make clean
 ```
+
 
 # EXWM (Emacs X Window Manager)
 
