@@ -142,7 +142,6 @@ emacs --version
 make clean
 ```
 
-
 # EXWM (Emacs X Window Manager)
 
 # Installation Guide
