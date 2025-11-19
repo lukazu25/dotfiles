@@ -15,7 +15,7 @@ Ensure you have the following tools installed:
 ## Downloading emacs Source-Code
 
 ```
-wget -c https://ftp.gnu.org/pub/gnu/emacs/emacs-VERSION.tar.xz
+wget -c https://ftpmirror.gnu.org/pub/gnu/emacs/emacs-VERSION.tar.xz
 tar -axvf emacs-VERSION.tar.xz
 cd emacs-VERSION
 ```
@@ -90,7 +90,7 @@ cd /path/to/emacs
 Download the New Source
 
 ```
-wget -c https://ftp.gnu.org/pub/gnu/emacs/emacs-NEW_VERSION.tar.xz
+wget -c https://ftpmirror.gnu.org/pub/gnu/emacs/emacs-NEW_VERSION.tar.xz
 tar -xJvf emacs-NEW_VERSION.tar.xz
 cd emacs-NEW_VERSION
 ```
