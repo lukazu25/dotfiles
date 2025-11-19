@@ -1,3 +1,5 @@
+# Emacs
+
 # Compile From Source
 
 ## Prerequisites
@@ -77,7 +79,68 @@ make clean
 
 If you installed Emacs to a custom location, you may need to update your system's `PATH` environment variable to ensure the new Emacs binary is found before any old versions. The new binary will typically be located at `/usr/local/bin/emacs`.
 
+## Update Emacs
 
+Navigate to the vim directory
+
+```
+cd /path/to/emacs
+```
+
+Download the New Source
+
+```
+wget -c https://ftp.gnu.org/pub/gnu/emacs/emacs-NEW_VERSION.tar.xz
+tar -xJvf emacs-NEW_VERSION.tar.xz
+cd emacs-NEW_VERSION
+```
+
+## Re-Configure the Build
+
+```
+./configure \
+    --prefix=/usr/local \
+    --with-native-compilation \
+    --with-tree-sitter \
+    --with-json \
+    --with-x-toolkit=gtk3 \
+    --with-imagemagick \
+    --with-gnutls \
+    --with-pgtk \
+    --with-mailutils
+```
+
+## Re-Compile and Install
+
+The `make` and sudo `make install` commands will overwrite the old Emacs files with the newly compiled binaries.
+
+- **Compile**
+
+```
+make -j$(nproc)
+```
+
+- **Install (requires root privileges)**
+
+```
+sudo make install
+```
+
+## Verification
+
+Check the Version and Features:
+
+```
+emacs --version
+```
+
+## Cleaning Up (Optional)
+
+- **Clean Object Files**
+
+```
+make clean
+```
 
 # EXWM (Emacs X Window Manager)
 
