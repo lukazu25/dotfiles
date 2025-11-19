@@ -1,0 +1,12 @@
+configuration {
+    /* Settings from extraConfig */
+    show-icons: true;
+    modi: "drun,run,window";
+
+    /* Theme reference (uncomment and set if using a separate theme file) */
+    /* theme: "~/.config/rofi/your-theme-name.rasi"; */
+
+    /* The NixOS config has a custom theme definition, which will go into a separate .rasi file. */
+}
+
+@theme "/home/vm/.config/rofi/themes/gruvbox"
