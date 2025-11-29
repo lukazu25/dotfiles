@@ -1,0 +1,55 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: JetBrainsMono Nerd Font propo;
+    font-weight: Bold;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: #202020;
+}
+
+#workspaces {
+    background: linear-gradient(60deg, #85baa0, #c5dca2);
+    margin: 5px 0px;
+    margin-left: 10px;
+    border-radius: 10px;
+    border: 2px solid;
+    border-color: #c4aa92;
+}
+
+#workspaces button {
+    padding: 5px 10px;
+    color: #202020;
+}
+
+#workspaces button.active {
+    color: #202020;
+    background-color: #6fae7b;
+    border-radius: 8px;
+}
+
+#workspaces button:hover {
+    background-color: #8fd59e;
+    color: #202020;
+    border-radius: 5px;
+}
+
+#clock, #battery, #pulseaudio, #network, #window, #language, #custom-rofi, #tray,
+#cpu, #disk, #temperature, #backlight, #memory, #power-profiles-daemon, #custom-power {
+    background: linear-gradient(60deg, #85baa0, #c5dca2);
+    padding: 5px 10px;
+    margin: 5px 0px;
+    border-radius: 10px;
+    border: 2px solid;
+    border-color: #c4aa92;
+}
+
+#battery.critical {
+    background: linear-gradient(60deg, #85baa0, #c5dca2);
+    color: #e74c3c;
+    border-radius: 5px 5px 5px 5px;
+}   

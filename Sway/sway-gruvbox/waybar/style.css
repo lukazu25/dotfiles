@@ -1,0 +1,443 @@
+@define-color color-bar-bg                              #232a2e;
+@define-color color-bar-fg                              #d3c6aa;
+@define-color color-bg                                  #232a2e;
+@define-color color-fg                                  #d3c6aa;
+@define-color color-button-bg                           #dbbc7f;
+@define-color color-button-fg                           #232a2e;
+@define-color color-button-urgent-bg                    #e67e80;
+@define-color color-button-urgent-fg                    #232a2e;
+@define-color color-workspace-button-bg                 #343f44;
+@define-color color-workspace-button-fg                 #d3c6aa;
+@define-color color-workspace-button-hover-bg           #3a515d;
+@define-color color-workspace-button-hover-fg           #7fbbb3;
+@define-color color-workspace-button-focused-bg         #7fbbb3;
+@define-color color-workspace-button-focused-fg         #232a2e;
+@define-color color-widget-audio-bg                     #dbbc7f;
+@define-color color-widget-audio-fg                     #232a2e;
+@define-color color-widget-audio-hover-bg               #ebcc8f;
+@define-color color-widget-audio-hover-fg               #232a2e;
+@define-color color-widget-audio-muted-bg               #dbbc7f;
+@define-color color-widget-audio-muted-fg               #232a2e;
+@define-color color-widget-clock-bg                     #7fbbb3;
+@define-color color-widget-clock-fg                     #232a2e;
+@define-color color-widget-battery-bg                   #a7c080;
+@define-color color-widget-battery-fg                   #232a2e;
+@define-color color-widget-battery-low-bg               #e67e80;
+@define-color color-widget-battery-low-fg               #232a2e;
+@define-color color-widget-battery-low-blink-bg         #f68e90;
+@define-color color-widget-battery-low-blink-fg         #232a2e;
+@define-color color-widget-backlight-bg                 #d699b6;
+@define-color color-widget-backlight-fg                 #232a2e;
+@define-color color-widget-temperature-bg               #e69875;
+@define-color color-widget-temperature-fg               #232a2e;
+@define-color color-widget-temperature-critical-bg      #e67e80;
+@define-color color-widget-temperature-critical-fg      #232a2e;
+@define-color color-widget-memory-bg                    #83c092;
+@define-color color-widget-memory-fg                    #232a2e;
+@define-color color-widget-cpu-bg                       #a7c080;
+@define-color color-widget-cpu-fg                       #232a2e;
+@define-color color-widget-power-profile-balanced-bg    #d699b6;
+@define-color color-widget-power-profile-balanced-fg    #232a2e;
+@define-color color-widget-power-profile-performance-bg #e69875;
+@define-color color-widget-power-profile-performance-fg #232a2e;
+@define-color color-widget-power-profile-saver-bg       #7fbbb3;
+@define-color color-widget-power-profile-saver-fg       #232a2e;
+@define-color color-widget-tray-bg                      #3a515d;
+@define-color color-widget-tray-needs-attention         #e67e80;
+@define-color color-widget-idle-inhibitor-off-bg        #3a515d;
+@define-color color-widget-idle-inhibitor-off-fg        #7fbbb3;
+@define-color color-widget-idle-inhibitor-on-bg         #7fbbb3;
+@define-color color-widget-idle-inhibitor-on-fg         #232a2e;
+@define-color color-widget-scratchpad-bg                #2d353b;
+@define-color color-widget-scratchpad-fg                #d3c6aa;
+@define-color color-widget-notifications-bg             #e69875;
+@define-color color-widget-notifications-fg             #232a2e;
+@define-color color-widget-power-bg                     #e67e80;
+@define-color color-widget-power-fg                     #232a2e;
+@define-color color-tooltip-bg                          #232a2e;
+@define-color color-tooltip-fg                          #d3c6aa;
+
+* {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 17px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+}
+
+window#waybar {
+    background-color: @color-bar-bg;
+    color: @color-bar-fg;
+    border-radius: 0;
+}
+
+window#waybar > * {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+button {
+    border: none;
+    background-color: @color-button-bg;
+}
+
+button:hover {
+    background: inherit;
+}
+
+#pulseaudio:hover {
+    background-color: @color-widget-audio-hover-bg;
+    color: @color-widget-audio-hover-fg;
+}
+
+#workspaces {
+    padding: 0;
+    margin: 0;
+}
+
+#workspaces button {
+    padding: 0;
+    min-height: 0px;
+    min-width: 37px;
+    margin-left: 4px;
+    background-color: @color-workspace-button-bg;
+    color: @color-workspace-button-fg;
+}
+
+#workspaces button:hover {
+    background-color: @color-workspace-button-hover-bg;
+    color: @color-workspace-button-hover-fg;
+}
+
+#workspaces button.focused {
+    background-color: @color-workspace-button-focused-bg;
+    color: @color-workspace-button-focused-fg;
+}
+
+#workspaces button.urgent {
+    background-color: @color-button-urgent-bg;
+    color: @color-button-urgent-fg;
+}
+
+#mode {
+    background-color: @color-button-urgent-bg;
+    color: @color-button-urgent-fg;
+    box-shadow: inset 0 -3px @color-workspace-button-hover-bg; 
+}
+
+#language,
+#keyboard-state,
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#custom-notifications,
+#custom-power,
+#mpd {
+    padding: 0 10px;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+#custom-notifications {
+    background-color: @color-widget-notifications-bg;
+    color: @color-widget-notifications-fg;
+    font-size: 20px;
+    padding-right: 14px;
+}
+
+#custom-power {
+    background-color: @color-widget-power-bg;
+    color: @color-widget-power-fg;
+    font-size: 20px;
+    padding-right: 15px;
+    margin-right: 4px;
+}
+
+#clock {
+    background-color: @color-widget-clock-bg;
+    color: @color-widget-clock-fg;
+}
+
+#battery {
+    background-color: @color-widget-battery-bg;
+    color: @color-widget-battery-fg;
+}
+
+#battery.charging, #battery.plugged {
+    background-color: @color-widget-battery-bg;
+    color: @color-widget-battery-fg;
+}
+
+#battery.charging {
+    padding-right: 12px;
+}
+
+@keyframes blink-battery-low {
+    to {
+        background-color: @color-widget-battery-low-blink-bg;
+        color: @color-widget-battery-low-blink-fg;
+    }
+}
+
+#battery:not(.charging) {
+    padding-right: 20px;
+}
+
+#battery.critical:not(.charging) {
+    background-color: @color-widget-battery-low-bg;
+    color: @color-widget-battery-low-fg;
+    animation-name: blink-battery-low;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#power-profiles-daemon {
+    padding-right: 15px;
+}
+
+#power-profiles-daemon.performance {
+    background-color: @color-widget-power-profile-performance-bg;
+    color: @color-widget-power-profile-performance-fg;
+    padding-right: 12px;
+}
+
+#power-profiles-daemon.balanced {
+    background-color: @color-widget-power-profile-balanced-bg;
+    color: @color-widget-power-profile-balanced-fg;
+    padding-right: 20px;
+}
+
+#power-profiles-daemon.power-saver {
+    background-color: @color-widget-power-profile-saver-bg;
+    color: @color-widget-power-profile-saver-fg;
+    padding-right: 16px;
+}
+
+label:focus {
+    background-color: @color-button-urgent-bg; 
+}
+
+#cpu {
+    background-color: @color-widget-cpu-bg;
+    color: @color-widget-cpu-fg;
+    padding-right: 16px;
+}
+
+#memory {
+    background-color: @color-widget-memory-bg;
+    color: @color-widget-memory-fg;
+    padding-right: 16px;
+}
+
+#disk {
+    background-color: @color-widget-tray-bg;
+    color: @color-fg;
+}
+
+#backlight {
+    background-color: @color-widget-backlight-bg;
+    color: @color-widget-backlight-fg;
+}
+
+#network {
+    background-color: @color-widget-clock-bg;
+    color: @color-widget-clock-fg;
+}
+
+#network.disconnected {
+    background-color: @color-widget-battery-low-bg;
+    color: @color-widget-battery-low-fg;
+}
+
+#pulseaudio {
+    background-color: @color-widget-audio-bg;
+    color: @color-widget-audio-fg;
+}
+
+#pulseaudio.muted {
+    background-color: @color-widget-audio-muted-bg;
+    color: @color-widget-audio-muted-fg;
+}
+
+#wireplumber {
+    background-color: @color-widget-audio-bg;
+    color: @color-widget-audio-fg;
+}
+
+#wireplumber.muted {
+    background-color: @color-widget-audio-muted-bg;
+    color: @color-widget-audio-muted-fg;
+}
+
+#custom-media {
+    background-color: @color-widget-tray-bg;
+    color: @color-fg;
+    min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+    background-color: @color-widget-memory-bg;
+    color: @color-widget-memory-fg;
+}
+
+#custom-media.custom-vlc {
+    background-color: @color-widget-temperature-bg;
+    color: @color-widget-temperature-fg;
+}
+
+#temperature {
+    background-color: @color-widget-temperature-bg;
+    color: @color-widget-temperature-fg;
+}
+
+#temperature.critical {
+    background-color: @color-widget-temperature-critical-bg;
+    color: @color-widget-temperature-critical-fg;
+}
+
+#tray {
+    background-color: @color-widget-tray-bg;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @color-widget-tray-needs-attention;
+}
+
+#idle_inhibitor {
+    background-color: @color-widget-idle-inhibitor-off-bg;
+    color: @color-widget-idle-inhibitor-off-fg;
+    padding-right: 18px;
+}
+
+#idle_inhibitor.activated {
+    background-color: @color-widget-idle-inhibitor-on-bg;
+    color: @color-widget-idle-inhibitor-on-fg;
+}
+
+#mpd {
+    background-color: @color-widget-backlight-bg;
+    color: @color-widget-backlight-fg;
+}
+
+#mpd.disconnected {
+    background-color: @color-widget-battery-low-bg;
+    color: @color-widget-battery-low-fg;
+}
+
+#mpd.stopped {
+    background-color: @color-widget-tray-bg;
+    color: @color-fg;
+}
+
+#mpd.paused {
+    background-color: @color-widget-clock-bg;
+    color: @color-widget-clock-fg;
+}
+
+#language {
+    background-color: @color-workspace-button-bg;
+    color: @color-workspace-button-fg;  
+    min-width: 16px;
+}
+
+#keyboard-state {
+    background-color: @color-widget-tray-bg;
+    color: @color-fg; 
+    min-width: 16px;
+}
+
+#keyboard-state > label {
+    padding: 0 5px;
+}
+
+#keyboard-state > label.locked {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#scratchpad {
+    background-color: @color-widget-scratchpad-bg;
+    color: @color-widget-scratchpad-fg;
+}
+
+#scratchpad.empty {
+    background-color: transparent;
+}
+
+#privacy {
+    padding: 0;
+}
+
+#privacy-item {
+    padding: 0 5px;
+    color: @color-fg;
+}
+
+#privacy-item.screenshare {
+    background-color: @color-widget-battery-low-bg;
+    color: @color-widget-battery-low-fg;
+}
+
+#privacy-item.audio-in {
+    background-color: @color-widget-audio-bg;
+    color: @color-widget-audio-fg;
+}
+
+#privacy-item.audio-out {
+    background-color: @color-widget-clock-bg;
+    color: @color-widget-clock-fg;
+}
+
+tooltip {
+    background-color: @color-tooltip-bg;
+    border: none;
+    border-radius: 5px;
+}
+
+tooltip decoration {
+    box-shadow: none;
+}
+
+tooltip decoration:backdrop {
+    box-shadow: none;
+}
+
+tooltip label {
+    color: @color-tooltip-fg;
+    padding-left: 5px;
+    padding-right: 5px;
+}
