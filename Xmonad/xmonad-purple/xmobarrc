@@ -1,0 +1,70 @@
+Config {
+  overrideRedirect = False,
+  font = "JetBrainsMono Nerd Font propo 11",
+  additionalFonts =
+    [ "Font Awesome 6 Free Solid 12"
+    , "Font Awesome 6 Brands 12"
+    , "Noto Color Emoji 11"
+    ],
+  bgColor = "#282828",
+  fgColor = "#ebdbb2",
+  position = BottomSize L 100 30,
+  lowerOnStart = False,
+  hideOnStart = False,
+  allDesktops = True,
+  persistent = True,
+
+
+  commands = [
+
+    -- Battery status 
+    Run BatteryP ["BAT0"]
+      [ "-t", "<acstatus><left>%"
+      , "-L", "10", "-H", "80"
+      , "-l", "red"
+      , "--", "-O", "↑", "-o", "↓", "-i", "="
+      ] 10,
+
+    -- Disk usage 
+    Run DiskU [("/", "<free>")]
+      [ "-L", "20", "-H", "50", "-m", "1", "-p", "3" ] 20,
+
+    -- CPU usage
+    Run Cpu
+      [ "-t", "<total>%"
+      , "-L", "3"
+      , "-H", "50"
+      , "--high", "red"
+      ] 10,
+
+    -- Keyboard layout
+    Run Kbd [("us", "🇺🇸"), ("ru", "🇷🇺"), ("ge", "🇬🇪")],
+
+    -- Memory usage
+    Run Memory ["--template", "<usedratio>%"] 10,
+
+    -- Date and time
+    Run Date "%a %Y-%m-%d %H:%M" "date" 10,
+
+    -- Volume Monitor (using Com)
+    Run Com "bash" [
+      "-c", "if pactl get-sink-mute @DEFAULT_SINK@ | grep -q 'Mute: yes'; then echo 'VOL: Muted'; else pactl get-sink-volume @DEFAULT_SINK@ | awk '/Volume:/ {print $5}'; fi || echo 'VOL: N/A'"
+    ] "volume" 10,
+
+    -- Workspace info from xmonad
+    Run StdinReader
+  ],
+
+  sepChar = "%",
+  alignSep = "}{",
+
+  template =
+    "%StdinReader% }{ \
+    \<box type=Bottom width=2 color=#98971a><fc=#98971a> %cpu%</fc></box>   \
+    \<box type=Bottom width=2 color=#d79921><fc=#d79921> %memory%</fc></box>   \
+    \<box type=Bottom width=2 color=#458588><fc=#458588> %battery%</fc></box>   \
+    \<box type=Bottom width=2 color=#b16286><fc=#b16286>󰒋 %disku%</fc></box>   \
+    \<box type=Bottom width=2 color=#928374><fc=#928374>󰕾 %volume%</fc></box>   \
+    \<box type=Bottom width=2 color=#689d6a><fc=#689d6a>%kbd%</fc></box>   \
+    \<box type=Bottom width=2 color=#7fa2ac><fc=#7fa2ac>󱑁 %date%</fc></box>"
+}

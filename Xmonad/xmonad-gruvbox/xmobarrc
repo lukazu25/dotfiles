@@ -1,0 +1,42 @@
+Config {
+  font = "JetBrainsMono Nerd Font 14",
+  additionalFonts = [ "JetBrainsMono Nerd Font Mono 14" ]
+  bgColor = "#282828",  -- Gruvbox dark background
+  fgColor = "#ebdbb2",  -- Gruvbox light foreground
+  position = BottomSize L 100 30,
+  lowerOnStart = True,
+  hideOnStart = False,
+  allDesktops = True,
+  persistent = True,
+  commands = [
+    -- CPU Monitor
+    Run Cpu ["-L", "10", "-H", "80",
+             "-n", "#b8bb26", "-h", "#fb4934",
+             "-t", "CPU: <total>%"] 10,
+
+    -- Memory Monitor
+    Run Memory ["-t", "MEM: <usedratio>%", "-L", "10", "-H", "80",
+              "-n", "#b8bb26", "-h", "#fb4934"] 10,
+
+    -- Date and Time
+    Run Date "%a %b %_d %H:%M" "date" 10,
+
+    -- Battery Monitor
+    Run Battery [
+      "-t", "BAT: <acstatus> <left>%",
+      "-L", "10", "-H", "80",
+      "-l", "#fb4934", "-n", "#fabd2f", "-h", "#b8bb26"
+    ] 50,
+
+    -- Volume Monitor (using Com)
+    Run Com "bash" [
+      "-c", "if pactl get-sink-mute @DEFAULT_SINK@ | grep -q 'Mute: yes'; then echo 'VOL: muted'; else pactl get-sink-volume @DEFAULT_SINK@ | awk '/Volume:/ {print \"VOL: \" $5}'; fi || echo 'VOL: N/A'"
+    ] "volume" 10,
+
+    -- StdinReader for Xmonad messages
+    Run StdinReader
+  ],
+  sepChar = "%",
+  alignSep = "}{",
+  template = "%StdinReader% }{ %cpu% | %memory% | %volume% | %battery% | <fc=#83a598>%date%</fc>"
+}
