@@ -1,0 +1,79 @@
+{
+  "modules-left": [
+    "ext/workspaces",
+    "custom/sep",
+    "dwl/window",
+  ],
+  "modules-right": [
+    "custom/sep",
+    "battery",
+    "custom/sep",
+    "pulseaudio",
+    "custom/sep",
+    "network",
+    "custom/sep",
+    "cpu",
+    "custom/sep",
+    "memory",
+    "custom/sep",
+    "disk",
+    "custom/sep",
+    "clock",
+    "custom/sep",
+    "tray"
+  ],
+
+  "clock": {
+    "format-alt": "{:%Y-%m-%d}"
+  },
+  "cpu": {
+    "format": "CPU: {usage}%",
+    "tooltip": false
+  },
+  "memory": {
+    "format": "MEM: {used}GiB"
+  },
+  "pulseaudio": {
+    "format": "VOL: {volume}%",
+    "format-muted": "MUTE"
+  },
+  "disk": {
+    "interval": 60,
+    "path": "/",
+    "format": "DISK: {free}"
+  },
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "BAT: {capacity}% {icon} {time}",
+    "format-plugged": "{capacity}% ",
+    "format-alt": "BAT {capacity}%",
+    "format-time": "{H}:{M}",
+    "format-icons": ["", "", "", "", ""]
+  },
+  "network": {
+    "format": "ON",
+    "format-disconnected": "OFF ⚠"
+  },
+  "ext/workspaces": {
+    "format": "{icon}",
+    "ignore-hidden": false,
+    "on-click": "activate",
+    "sort-by-id": true
+  },
+  "dwl/tags": {
+      "num-tags": 9,
+      "hide-vacant": true,
+      // "tag-labels": ["一", "二", "三", "四", "五", "六", "七", "八", "九"]
+  },
+  "dwl/window": {
+    "format": "[{layout}] {title}"
+  },
+  "custom/sep": {
+    "format": "|",
+    "interval": 0
+  }
+}

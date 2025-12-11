@@ -1,0 +1,3 @@
+! The following line will prevent styles from setting the background.
+! background: none
+*font: JetBrains Mono Nerd Font-11:bold

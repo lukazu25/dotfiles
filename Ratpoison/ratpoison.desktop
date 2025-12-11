@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Ratpoison
+Comment=The ratpoison window manager
+Exec=/usr/bin/ratpoison
+TryExec=/usr/bin/ratpoison
+Type=Application

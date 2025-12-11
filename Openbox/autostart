@@ -1,0 +1,5 @@
+xrandr -s 1920x1080
+tint2 &
+ibus-daemon -d &
+volumeicon &
+nm-applet &

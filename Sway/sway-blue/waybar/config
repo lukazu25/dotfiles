@@ -1,0 +1,135 @@
+{
+    "layer": "top",
+    
+    "modules-left": [
+    "sway/workspaces",
+    "sway/mode",
+    "sway/language"
+    ],
+
+    "modules-center": [
+    "clock"
+    ],
+
+    "modules-right": [
+    "tray",
+    "memory",
+    "cpu", 
+    "pulseaudio",
+    "battery",
+    "custom/power"
+    ],
+
+    "sway/workspaces": {
+    "all-outputs": true,
+    "disable-scroll": true,
+    "current-only": false,
+    "persistent-workspaces": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": []
+        }
+    }, 
+     
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+
+    "sway/language": {
+    "format": "󰌌 {}",
+    "tooltip": false
+    },
+
+    "pulseaudio": {
+    "format": "{icon} {volume}% {format_source}",
+    "format-bluetooth": " {volume}% {format_source}",
+    "format-bluetooth-muted": "󰝟  {format_source}",
+    "format-muted": "󰝟 {format_source}",
+    "format-source": " {volume}%",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol"
+  },
+    "battery": {
+    "tooltip": true,
+    "tooltip-format": "{timeTo}\nPower: {power}w",
+    "interval": 5,
+    "states": {
+      // "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-full": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}% ",
+    "format-icons": ["", "", "", "", ""]
+  },
+
+    "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
+  },
+    
+    "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": ["󰃞", "󰃟", "󰃠"]
+  },
+    
+  "temperature": {
+    "warning-threshold": 70,
+    "critical-threshold": 80,
+    "format": "{icon} {temperatureC}°C",
+    "tooltip": true,
+    "format-icons": ["", "", ""]
+  }, 
+
+    "custom/power": {
+    "format": "⏻",
+    "tooltip": false,
+    "tooltip-label": "Power Options",
+    "on-click": "~/.config/rofi/powermenu.sh"
+  },  
+
+  "custom/notifications": {
+        "format": "",
+        "on-click": "swaync-client -t",
+        "tooltip": false
+    }, 
+
+    "cpu": {
+    "interval": 5,
+    "format": " {usage:1}%"
+    },
+
+    "memory": {
+    "interval": 5,
+    "format": " {percentage}%"
+    },
+
+    "tray": {
+    "icon-size": 20
+    },
+
+    "clock": {
+    "format": "{:%H:%M}",
+    "format-alt": "{:%A, %d %B %Y}",
+    "tooltip-format": "{:%H:%M}"
+    }
+}
