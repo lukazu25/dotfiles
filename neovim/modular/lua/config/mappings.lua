@@ -1,0 +1,7 @@
+vim.keymap.set('n', ']b', '<cmd>bnext<cr>', { desc = 'Next buffer' })
+vim.keymap.set('n', '[b', '<cmd>bprev<cr>', { desc = 'Previous buffer' })
+vim.keymap.set('n', '<leader>bd', '<cmd>bdelete<cr>', { desc = 'Delete buffer' })
+vim.keymap.set('n', '<C-S-h>', '<cmd>vertical resize +5<CR>', { desc = 'Resize window left' })
+vim.keymap.set('n', '<C-S-j>', '<cmd>resize +3<CR>', { desc = 'Resize window down' })
+vim.keymap.set('n', '<C-S-k>', '<cmd>resize -3<CR>', { desc = 'Resize window up' })
+vim.keymap.set('n', '<C-S-l>', '<cmd>vertical resize -5<CR>', { desc = 'Resize window right' })

@@ -1,0 +1,59 @@
+# layout and style
+bottom_bar          : false
+height              : 25
+vertical_padding    : 0
+horizontal_padding  : 0
+text_padding        : 0
+border              : false
+border_width        : 0
+background_colour   : #2E3440
+foreground_colour   : #D8DEE9
+border_colour       : #717394
+font                : JetBrainsMono Nerd Font
+font_size           : 14
+
+# modules
+#module.0.name       : wname
+#module.0.cmd        : xdotool getactivewindow getwindowclassname | cut -c -42
+#module.0.enabled    : true
+#module.0.interval   : 1
+
+#module.1.name       : layout
+#module.1.cmd        : xkblayout-state print "%s"
+#module.1.enabled    : true
+#module.1.interval   : 1
+
+module.2.name       : cpu
+module.2.cmd        : top -bn1 | grep 'Cpu(s)' | sed 's/.*, *\([0-9.]*\)%* id.*/\1/' | awk '{print 100-$1"%"}'
+module.2.enabled    : true
+module.2.interval   : 3
+
+module.3.name       : mem
+module.3.cmd        : free -h | awk '/^Mem/ { print $3 }' | sed s/i//g
+module.3.enabled    : true
+module.3.interval   : 3
+
+module.4.name       : volume
+module.4.cmd        : amixer get Master | grep -o '[0-9]*%' | head -1 || echo 'N/A'
+module.4.enabled    : true
+module.4.interval   : 5
+
+module.5.name       : battery
+module.5.cmd        : cat /sys/class/power_supply/BAT0/capacity 2>/dev/null | sed 's/$/%/' || echo 'N/A'
+module.5.enabled    : false
+module.5.interval   : 30
+
+module.6.name       : clock
+module.6.cmd        : date '+%H:%M'
+module.6.enabled    : true
+module.6.interval   : 1
+
+workspaces.labels              : 1 2 3 4 5 6 7 8 9
+workspaces.active_background   : #434C5E
+workspaces.active_foreground   : #ECEFF4
+workspaces.inactive_background : #2E3440
+workspaces.inactive_foreground : #D8DEE9
+workspaces.padding_left        : 10
+workspaces.padding_right       : 10
+workspaces.spacing             : 0
+workspaces.position            : left
