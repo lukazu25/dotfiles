@@ -1,0 +1,13 @@
+allow_images=true
+width=600
+show=drun
+prompt=Search
+height=500
+term=kitty
+hide_scroll=true
+print_command=true
+insensitive=true
+columns=1
+no_actions=true
+x=660
+y=10

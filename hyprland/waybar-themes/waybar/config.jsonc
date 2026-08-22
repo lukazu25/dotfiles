@@ -1,0 +1,218 @@
+{
+    "layer": "top",
+    "position": "top",
+    "spacing": 0,
+    "height": 32,
+    "modules-left": [
+        "custom/logo",
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+    ],
+    "modules-right": [
+        "tray",
+	"custom/kernel",
+        "pulseaudio",
+	"power-profiles-daemon",
+	"cpu",
+        "memory",
+	"custom/diskfree",
+        "clock",
+        "battery",
+        "custom/notifications",
+	"custom/power"
+    ],
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "on-click-right": "fullscreen",
+        "icon-theme": "WhiteSur",
+        "icon-size": 25,
+        "tooltip-format": "{title}"
+    },
+    "hyprland/workspaces": {
+        "on-click": "activate",
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{name}",
+        "format-icons": {
+            "default": "",
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": ""
+            //"active": "󱓻",
+            //"urgent": "󱓻"
+        },
+        "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": [],
+            "9": []
+        }
+    },
+    "cpu": {
+        "format": "⧯ Cpu: {usage}%" ,
+        "tooltip": true
+    },
+    "memory": {
+        "interval": 5,
+        "format": " Mem: {}%"
+    },
+    "tray": {
+        "spacing": 10
+    },
+    "clock": {
+        "tooltip-format": "{calendar}",
+        "format-alt": " {:%a, %b %d %Y}",
+        "format": "󱑁 {:%H:%M}"
+    },
+    "network": {
+        "format-wifi" : "{icon}",
+        "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
+        "format-ethernet": "󰀂",
+        "format-disconnected" : "󰖪",
+	"tooltip-format-wifi": "{icon} {essid}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+        "tooltip-format-ethernet": "󰀂 {ifname}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
+	"tooltip-format-disconnected": "Disconnected",
+	"interval": 5,
+	"nospacing": 1
+    },
+     "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}%  {format_source}",
+        "format-bluetooth-muted": "󰝟  {format_source}",
+        "format-muted": "󰝟 {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+     "wireplumber": {
+        "format": "{icon}",
+        "format-bluetooth": "󰂰",
+        "nospacing": 1,
+        "tooltip-format": "Volume : {volume}%",
+        "format-muted": "󰝟",
+        "format-icons": {
+            "headphone": "",
+            "default": ["󰖀","󰕾",""]
+        },
+        "on-click": "pamixer -t",
+        "scroll-step": 1
+    },   
+    "custom/logo": {
+        "format": "  ",
+        "tooltip": false,
+        "on-click": "rofi -show drun"
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": {
+            "charging": [
+                "󰢜",
+                "󰂆",
+                "󰂇",
+                "󰂈",
+                "󰢝",
+                "󰂉",
+                "󰢞",
+                "󰂊",
+                "󰂋",
+                "󰂅"
+            ],
+            "default": [
+                "󰁺",
+                "󰁻",
+                "󰁼",
+                "󰁽",
+                "󰁾",
+                "󰁿",
+                "󰂀",
+                "󰂁",
+                "󰂂",
+                "󰁹"
+            ]
+        },
+        "format-full": "Charged ",
+        "interval": 5,
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "tooltip": true
+    },
+    "custom/pacman": {
+	"format": "{} ",
+	"interval": 3600,
+	"exec": "yay -Qu | wc -l",
+    "exec-if": "[[ $(yay -Qu | wc -l) != 0 ]]",
+	"on-click": "kitty sh -c yay -Syu && notify-send 'The system has been updated'",
+    "tooltip": false 
+   },
+    "custom/kernel": {
+        "format": "❤ {}",
+	"interval": 3600,
+        "exec": "uname -r"
+    },
+    "custom/diskfree": {
+        "format": " Disk: {} used",
+	"interval": 300,
+        "exec": "df --total -hl | grep 'nvme0n1p2' | awk '{print $5}'"
+    },
+    "custom/notifications": {
+    "format": "",
+    "on-click": "swaync-client -t",
+    "tooltip": false
+ },
+
+ "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+    }
+ }, 
+
+ "backlight": {
+       // "device": "intel_backlight",
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰃞", "󰃟", "󰃠"]
+    },
+
+ "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{icon} {temperatureC}°C",
+        "tooltip": true,
+        "format-icons": ["", "", ""]
+    }, 
+
+ "custom/power": {
+        "format": "⏻",
+        "tooltip": false,
+        "on-click": "~/.config/rofi/powermenu.sh"
+    }
+}

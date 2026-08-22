@@ -1,0 +1,163 @@
+{
+  "layer": "top",
+  "height": 40,
+  "spacing": 5,
+  "margin-top": 5,
+  "margin-left": 5,
+  "margin-right": 5,
+  "modules-left": [
+    "custom/rofi",
+    "hyprland/workspaces",
+    "hyprland/language"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "network",
+    "disk",
+    "cpu",
+    "temperature",
+    "backlight",
+    "memory",
+    "pulseaudio",
+    "battery",
+    "tray",
+    "custom/power"
+  ],
+  "custom/rofi": {
+    "format": "<span color='#202020' bgcolor='#ea6962' >  </span>",
+    "on-click": "rofi -show drun",
+    "escape": true,
+    "tooltip": false
+  },
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    //"warp-on-scroll": false,
+    "format": "{icon}",
+    "format-icons": {
+      "urgent": "",
+      "focused": "",
+      "default": ""
+    }
+    },
+  "hyprland/window": {
+    "format": "<span color='#202020' bgcolor='#ea6962' > 󰣆 </span> {class}",
+    "separate-outputs": true,
+    "icon": false,
+    "tooltip": false
+  },
+  "hyprland/language": {
+    "format": "<span color='#202020' bgcolor='#ea6962' > 󰌌 </span> {}",
+    "separate-outputs": true,
+    "format-en": "EN",
+    "format-ru": "RU",
+    "format-ka": "GE",
+    "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 8
+  },
+  "disk": {
+    "format": "<span color='#202020' bgcolor='#ea6962' >  </span> {free}",
+    "interval": 20
+  },
+  "cpu": {
+    "format": "<span color='#202020' bgcolor='#ea6962' >  </span> {usage}%",
+    "tooltip": false,
+    "interval": 1
+  },
+  "temperature": {
+    "format": "<span color='#202020' bgcolor='#ea6962' >  </span> {}",
+    "tooltip": false
+  },
+  "backlight": {
+    "format": "<span color='#202020' bgcolor='#ea6962' > 󰞏 </span> {percent}%",
+    "tooltip": false
+  },
+  "memory": {
+    "format": "<span color='#202020' bgcolor='#ea6962' >  </span> {}%"
+  },
+  "power-profiles-daemon": {
+    "format": "<span color='#202020' bgcolor='#ea6962' > {icon} </span>",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
+  }, 
+  "pulseaudio": {
+    "format": "<span color='#202020' bgcolor='#ea6962' >  </span> {volume}%",
+    "format-muted": "<span color='#202020' bgcolor='#ea6962' >  </span> {volume}%",
+    "format-bluetooth": "<span color='#202020' bgcolor='#ea6962' > 󰂰 </span> {volume}%",
+    "format-bluetooth-muted": "<span color='#202020' bgcolor='#ea6962' > 󰂲 </span> {volume}%",
+    "format-source": "{volume}% ",
+    "on-click": "pavucontrol",
+    "tooltip": false,
+    "max-volume": 130
+  },
+  "battery": {
+    "interval": 1,
+    "states": {
+      "good": 99,
+      "warning": 30,
+      "critical": 20
+    },
+    "format-icons": [
+      "󰂎",
+      "󰁺",
+      "󰁻",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ],
+    "format": "<span color='#202020' bgcolor='#ea6962' > {icon} </span> {capacity}%",
+    "format-critical": "<span color='#202020' bgcolor='#cc241d' > {icon} </span> {capacity}%!!",
+    "format-warning": "<span color='#202020' bgcolor='#e78a4e' > {icon} </span> {capacity}%",
+    "format-full": "<span color='#202020' bgcolor='#ea6962' > {icon} </span> {capacity}%",
+    "format-charging": "<span color='#202020' bgcolor='#ea6962' > 󰂅 </span> {capacity}%",
+    "format-charging-warning": "<span color='#202020' bgcolor='#e78a4e' > 󰢝 </span> {capacity}%",
+    "format-charging-critical": "<span color='#202020' bgcolor='#cc241d' > 󰢜 </span> {capacity}%",
+    "format-plugged": "<span color='#202020' bgcolor='#ea6962' > 󰂅 </span> {capacity}%",
+    "format-alt": "<span color='#202020' bgcolor='#ea6962' > 󱧥 </span> {time}",
+    "tooltip": false
+  },
+  "network": {
+    "interval": 2,
+    "format": "<span color='#202020' bgcolor='#ea6962'> 󱘖 </span> {bandwidthDownBits}",
+    "format-wifi": "<span color='#202020' bgcolor='#ea6962'> {icon} </span> {bandwidthDownBits}",
+    "format-ethernet": "<span color='#202020' bgcolor='#ea6962'> 󰈀 </span> {bandwidthDownBits}",
+    "format-icons": [
+      "󰤫",
+      "󰤟",
+      "󰤢",
+      "󰤥",
+      "󰤨"
+    ],
+    "tooltip": false,
+    "states": {
+      "normal": 25
+    }
+  },
+  "custom/power": {
+    "format": "⏻",
+    "tooltip": true,
+    "tooltip-label": "Power Options",
+    "on-click": "~/.config/rofi/powermenu.sh"
+  },
+  "clock": {
+    "format": "<span color='#202020' bgcolor='#ea6962' > 󱑁 </span> {:%H:%M}",
+    "format-alt": "<span color='#202020' bgcolor='#ea6962' >  </span> {:%A, %d %B %Y}",
+    "tooltip": false,
+    "interval": 1
+  }
+}

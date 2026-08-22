@@ -1,0 +1,55 @@
+# --- Startup programs and environment setup ---
+exec nitrogen --restore
+exec /usr/bin/rpws init 9 -k
+exec xsetroot -cursor_name left_ptr
+exec setxkbmap -layout us,ru,ge -option 'grp:alt_shift_toggle'
+
+# --- Window manager appearance and layout ---
+set winname title
+set bargravity center
+set barpadding 3 3
+set border 3
+set font "JetBrainsMono Nerd Font-10:style=SemiBold"
+set bgcolor #222222
+set fgcolor #CCCCCC
+
+# --- Modifier key setup ---
+escape Super_L
+
+# --- Application shortcuts ---
+bind c exec alacritty
+bind d exec rofi -show drun
+
+# --- Screenshot shortcuts ---
+bind Print exec scrot
+bind C-Print exec scrot -s
+
+# --- Volume and brightness control ---
+definekey top XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+definekey top XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ -5%
+definekey top XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+definekey top XF86MonBrightnessUp exec brightnessctl -e4 -n2 set +5%
+definekey top XF86MonBrightnessDown exec brightnessctl -e4 -n2 set 5%-
+
+# --- Workspace switching ---
+bind 1 exec rpws 1
+bind 2 exec rpws 2
+bind 3 exec rpws 3
+bind 4 exec rpws 4
+bind 5 exec rpws 5
+bind 6 exec rpws 6
+bind 7 exec rpws 7
+bind 8 exec rpws 8
+bind 9 exec rpws 9
+
+# --- Move windows between workspaces ---
+bind C-1 exec rpws move1
+bind C-2 exec rpws move2
+bind C-3 exec rpws move3
+bind C-4 exec rpws move4
+bind C-5 exec rpws move5
+bind C-6 exec rpws move6
+bind C-7 exec rpws move7
+bind C-8 exec rpws move8
+bind C-9 exec rpws move9
+
