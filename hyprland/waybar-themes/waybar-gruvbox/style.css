@@ -1,0 +1,437 @@
+@define-color color-bar-bg                              #282828;
+@define-color color-bar-fg                              #ebdbb2;
+@define-color color-bar-underline                       #232323;
+@define-color color-bg                                  #282828;
+@define-color color-fg                                  #ebdbb2;
+@define-color color-button-bg                           #83a598;
+@define-color color-button-fg                           #282828;
+@define-color color-button-urgent-bg                    #fb4934;
+@define-color color-button-urgent-fg                    #282828;
+@define-color color-workspace-button-bg                 #504945;
+@define-color color-workspace-button-fg                 #ebdbb2;
+@define-color color-workspace-button-hover-bg           #665c54;
+@define-color color-workspace-button-hover-fg           #ebdbb2;
+@define-color color-workspace-button-focused-bg         #83a598;
+@define-color color-workspace-button-focused-fg         #282828;
+@define-color color-widget-audio-bg                     #fabd2f;
+@define-color color-widget-audio-fg                     #282828;
+@define-color color-widget-audio-hover-bg               #fabd2f;
+@define-color color-widget-audio-hover-fg               #282828;
+@define-color color-widget-audio-muted-bg               #fabd2f;
+@define-color color-widget-audio-muted-fg               #282828;
+@define-color color-widget-clock-bg                     #d5c4a1;
+@define-color color-widget-clock-fg                     #282828;
+@define-color color-widget-battery-bg                   #b8bb26;
+@define-color color-widget-battery-fg                   #282828;
+@define-color color-widget-battery-low-bg               #fb4934;
+@define-color color-widget-battery-low-fg               #282828;
+@define-color color-widget-battery-low-blink-bg         #fb4934;
+@define-color color-widget-battery-low-blink-fg         #282828;
+@define-color color-widget-backlight-bg                 #d3869b;
+@define-color color-widget-backlight-fg                 #282828;
+@define-color color-widget-temperature-bg               #8ec07c;
+@define-color color-widget-temperature-fg               #282828;
+@define-color color-widget-temperature-critical-bg      #fb4934;
+@define-color color-widget-temperature-critical-fg      #282828;
+@define-color color-widget-memory-bg                    #83a598;
+@define-color color-widget-memory-fg                    #282828;
+@define-color color-widget-cpu-bg                       #d5c4a1;
+@define-color color-widget-cpu-fg                       #282828;
+@define-color color-widget-power-profile-balanced-bg    #d3869b;
+@define-color color-widget-power-profile-balanced-fg    #282828;
+@define-color color-widget-power-profile-performance-bg #fe8019;
+@define-color color-widget-power-profile-performance-fg #282828;
+@define-color color-widget-power-profile-saver-bg       #b8bb26;
+@define-color color-widget-power-profile-saver-fg       #282828;
+@define-color color-widget-tray-bg                      #504945;
+@define-color color-widget-tray-needs-attention         #fb4934;
+@define-color color-widget-idle-inhibitor-off-bg        #504945;
+@define-color color-widget-idle-inhibitor-off-fg        #a89984;
+@define-color color-widget-idle-inhibitor-on-bg         #d5c4a1;
+@define-color color-widget-idle-inhibitor-on-fg         #282828;
+@define-color color-widget-scratchpad-bg                #ff0000;
+@define-color color-widget-scratchpad-fg                #ff0000;
+@define-color color-widget-notifications-bg             #83a598;
+@define-color color-widget-notifications-fg             #282828;
+@define-color color-widget-power-bg                     #83a598;
+@define-color color-widget-power-fg                     #282828;
+@define-color color-tooltip-bg                          #282828;
+@define-color color-tooltip-fg                          #ebdbb2;
+
+* {
+    font-family: "JetBrainsMono Nerd Font Propo", monospace;
+    font-size: 17px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+}
+
+window#waybar {
+    background-color: @color-bar-bg;
+    color: @color-bar-fg;
+    border-bottom: 4px solid @color-bar-underline;
+}
+
+window#waybar > * {
+    margin-top: 4px;
+    margin-bottom: 8px; /* margin-top + bar underline thickness */
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+button {
+    border: none;
+    background-color: @color-button-bg;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: inherit;
+}
+
+/* you can set a style on hover for any module like this */
+#pulseaudio:hover {
+    background-color: @color-widget-audio-hover-bg;
+    color: @color-widget-audio-hover-fg;
+}
+
+#workspaces {
+    padding: 0;
+    margin: 0;
+}
+
+#workspaces button {
+    padding: 0;
+    min-height: 0px;
+    min-width: 37px;
+    margin-left: 4px;
+    background-color: @color-workspace-button-bg;
+    color: @color-workspace-button-fg;
+}
+
+#workspaces button:hover {
+    background-color: @color-workspace-button-hover-bg;
+    color: @color-workspace-button-hover-fg;
+}
+
+#workspaces button.active {
+    background-color: @color-workspace-button-focused-bg;
+    color: @color-workspace-button-focused-fg;
+}
+
+#workspaces button.urgent {
+    background-color: @color-button-urgent-bg;
+    color: @color-button-urgent-fg;
+}
+
+#mode {
+    background-color: #ff0000;
+    box-shadow: inset 0 -3px #0000ff;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#custom-notifications,
+#custom-power,
+#mpd {
+    padding: 0 10px;
+}
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+#custom-notifications {
+    background-color: @color-widget-notifications-bg;
+    color: @color-widget-notifications-fg;
+    font-size: 20px;
+    padding-right: 14px;
+}
+
+#custom-power {
+    background-color: @color-widget-power-bg;
+    color: @color-widget-power-fg;
+    font-size: 20px;
+    margin-right: 4px;
+}
+
+#clock {
+    background-color: @color-widget-clock-bg;
+    color: @color-widget-clock-fg;
+}
+
+#battery {
+    background-color: @color-widget-battery-bg;
+    color: @color-widget-battery-fg;
+}
+
+#battery.charging, #battery.plugged {
+    background-color: @color-widget-battery-bg;
+    color: @color-widget-battery-fg;
+}
+
+#battery.charging {
+}
+
+@keyframes blink-battery-low {
+    to {
+        background-color: @color-widget-battery-low-blink-bg;
+        color: @color-widget-battery-low-blink-fg;
+    }
+}
+
+#battery:not(.charging) {
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    background-color: @color-widget-battery-low-bg;
+    color: @color-widget-battery-low-fg;
+    animation-name: blink-battery-low;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#power-profiles-daemon {
+}
+
+#power-profiles-daemon.performance {
+    background-color: @color-widget-power-profile-performance-bg;
+    color: @color-widget-power-profile-performance-fg;
+}
+
+#power-profiles-daemon.balanced {
+    background-color: @color-widget-power-profile-balanced-bg;
+    color: @color-widget-power-profile-balanced-fg;
+}
+
+#power-profiles-daemon.power-saver {
+    background-color: @color-widget-power-profile-saver-bg;
+    color: @color-widget-power-profile-saver-fg;
+}
+
+label:focus {
+    background-color: #ff0000;
+}
+
+#cpu {
+    background-color: @color-widget-cpu-bg;
+    color: @color-widget-cpu-fg;
+}
+
+#memory {
+    background-color: @color-widget-memory-bg;
+    color: @color-widget-memory-fg;
+}
+
+#disk {
+    background-color: #ff0000;
+    color: #282828;
+}
+
+#backlight {
+    background-color: @color-widget-backlight-bg;
+    color: @color-widget-backlight-fg;
+}
+
+#network {
+    background-color: #d79921;
+    color: #282828;
+}
+
+#network.disconnected {
+    background-color: #fb4934;
+	color: #282828;
+}
+
+#pulseaudio {
+    background-color: @color-widget-audio-bg;
+    color: @color-widget-audio-fg;
+}
+
+#pulseaudio.muted {
+    background-color: @color-widget-audio-muted-bg;
+    color: @color-widget-audio-muted-fg;
+}
+
+#wireplumber {
+    background-color: @color-widget-audio-bg;
+    color: @color-widget-audio-fg;
+}
+
+#wireplumber.muted {
+    background-color: @color-widget-audio-muted-bg;
+	color: @color-widget-audio-muted-fg;
+}
+
+#custom-media {
+    background-color: #d65d0e;
+    color: #282828;
+    min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+    background-color: #1db954;
+    color: #282828;
+}
+
+#custom-media.custom-vlc {
+    background-color: #d65d0e;
+    color: #282828;
+}
+
+#temperature {
+    background-color: @color-widget-temperature-bg;
+    color: @color-widget-temperature-fg;
+}
+
+#temperature.critical {
+    background-color: @color-widget-temperature-critical-bg;
+    color: @color-widget-temperature-critical-fg;
+}
+
+#tray {
+    background-color: @color-widget-tray-bg;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @color-widget-tray-needs-attention;
+}
+
+#idle_inhibitor {
+    background-color: @color-widget-idle-inhibitor-off-bg;
+    color: @color-widget-idle-inhibitor-off-fg;
+}
+
+#idle_inhibitor.activated {
+    background-color: @color-widget-idle-inhibitor-on-bg;
+    color: @color-widget-idle-inhibitor-on-fg;
+}
+
+#mpd {
+    background-color: #d65d0e;
+    color: #282828;
+}
+
+#mpd.disconnected {
+    background-color: #d65d0e;
+    color: #282828;
+}
+
+#mpd.stopped {
+    background-color: #d65d0e;
+    color: #282828;
+}
+
+#mpd.paused {
+    background-color: #d65d0e;
+    color: #282828;
+}
+
+#language {
+    background: #689d6a;
+    color: #282828;
+    padding: 0 5px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+
+#keyboard-state {
+    background: #458588;
+    color: #282828;
+    padding: 0 0px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+
+#keyboard-state > label {
+    padding: 0 5px;
+}
+
+#keyboard-state > label.locked {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#scratchpad {
+    background-color: @color-widget-scratchpad-bg;
+    color: @color-widget-scratchpad-fg;
+}
+
+#scratchpad.empty {
+	background-color: transparent;
+}
+
+#privacy {
+    padding: 0;
+}
+
+#privacy-item {
+    padding: 0 5px;
+    color: white;
+}
+
+#privacy-item.screenshare {
+    background-color: #ff0000;
+}
+
+#privacy-item.audio-in {
+    background-color: #0000ff;
+}
+
+#privacy-item.audio-out {
+    background-color: #00ff00;
+}
+
+tooltip {
+  background-color: @color-tooltip-bg;
+  border: none;
+  border-radius: 5px;
+}
+
+tooltip decoration {
+  box-shadow: none;
+}
+
+tooltip decoration:backdrop {
+  box-shadow: none;
+}
+
+tooltip label {
+  color: @color-tooltip-fg;
+  padding-left: 5px;
+  padding-right: 5px;
+}

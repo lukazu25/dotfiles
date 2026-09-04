@@ -1,0 +1,218 @@
+<?xml version="1.0"?>
+<JWM>
+
+    <!-- The root menu. -->
+    <RootMenu onroot="12">
+        <Program icon="applications-system" label="App Launcher">rofi -show drun</Program>
+        <Program icon="utilities-terminal" label="Terminal">xfce4-terminal</Program>
+        <Program icon="system-file-manager" label="File Manager">thunar</Program>
+        <Program icon="web-browser" label="Web Browser">firefox</Program>
+        <Separator/>
+        <Restart label="Restart" icon="reload"/>
+        <Exit label="Exit" confirm="true" icon="exit"/>
+        <Program label="Power Off">$HOME/.config/rofi/powermenu.sh</Program>
+    </RootMenu>
+
+    <!-- Options for program groups. -->
+    <Group>
+        <Option>tiled</Option>
+    </Group>
+    <Group>
+        <Name>xterm</Name>
+        <Option>vmax</Option>
+    </Group>
+    <Group>
+        <Name>xclock</Name>
+        <Option>drag</Option>
+        <Option>notitle</Option>
+    </Group>
+
+    <!-- Tray at the bottom. -->
+    <Tray x="0" y="-1" height="35" autohide="off">
+        <Spacer width="2"/>
+        <TrayButton icon="/usr/share/icons/Papirus/22x22/panel/start-here.svg">root:1</TrayButton>
+        <Spacer width="8"/>
+        <TaskList maxwidth="150"/>
+        <Spacer width="8"/>
+        <Pager labeled="false"/>
+        <Spacer width="21"/>
+        <Dock spacing="14"/>
+        <Spacer width="14"/>
+        <Clock format="%H:%M" />
+        <Spacer width="14"/>
+        <TrayButton icon="/usr/share/icons/Papirus/22x22/apps/show-desktop.svg">showdesktop</TrayButton>
+    </Tray>
+
+    <!-- Visual Styles -->
+    <WindowStyle decorations="flat">
+        <!-- Doom Colors -->
+        <Font>JetBrains Mono Nerd Font-10</Font>
+        <Width>4</Width>
+        <Corner>2</Corner>
+        <Height>27</Height>
+        <Foreground>#bbc2cf</Foreground>
+        <Background>#282c34</Background>
+        <Opacity>1.0</Opacity>
+        <Active>
+            <Foreground>#ffffff</Foreground>
+            <Background>#3f444a</Background>
+            <Opacity>1.0</Opacity>
+        </Active>
+    </WindowStyle>
+
+    <TrayStyle decorations="flat">
+        <Font>JetBrains Mono Nerd Font-12</Font>
+        <Background>#282c34</Background>
+        <Foreground>#bbc2cf</Foreground>
+        <Opacity>0.9</Opacity>
+    </TrayStyle>
+
+    <TaskListStyle list="all" group="true">
+        <Font>JetBrains Mono Nerd Font-9</Font>
+        <Active>
+            <Foreground>#ffffff</Foreground>
+            <Background>#3f444a</Background>
+        </Active>
+        <Foreground>#bbc2cf</Foreground>
+        <Background>#282c34</Background>
+    </TaskListStyle>
+
+    <PagerStyle>
+        <Foreground>#bbc2cf</Foreground>
+        <Background>#3f444a</Background>
+        <Text>#bbc2cf</Text>
+        <Active>
+            <Foreground>#51afef</Foreground>
+            <Background>#5c6269</Background>
+        </Active>
+    </PagerStyle>
+
+    <MenuStyle decorations="motif">
+        <Font>JetBrains Mono Nerd Font-12</Font>
+        <Foreground>#bbc2cf</Foreground>
+        <Background>#282c34</Background>
+        <Active>
+            <Foreground>#282c34</Foreground>
+            <Background>#51afef</Background>
+        </Active>
+        <Opacity>0.95</Opacity>
+    </MenuStyle>
+
+    <PopupStyle>
+        <Font>JetBrains Mono Nerd Font-12</Font>
+        <Foreground>#bbc2cf</Foreground>
+        <Background>#3f444a</Background>
+    </PopupStyle>
+
+    <!-- Path where icons can be found. -->
+    <IconPath>
+        /usr/share/icons/Tango/scalable/actions
+    </IconPath>
+    <IconPath>
+        /usr/share/icons/Tango/scalable/apps
+    </IconPath>
+    <IconPath>
+        /usr/share/icons/Tango/scalable/places
+    </IconPath>
+    <IconPath>
+        /usr/share/icons/Tango/scalable/status
+    </IconPath>
+    <IconPath>
+        /usr/share/icons/Tango/scalable/mimetypes
+    </IconPath>
+    <IconPath>
+        /usr/share/icons/jwm
+    </IconPath>
+
+    <!-- Virtual Desktops -->
+    <Desktops width="4" height="1">
+        <Background type="solid">#282c34</Background>
+    </Desktops>
+
+    <!-- Double click speed (in milliseconds) -->
+    <DoubleClickSpeed>400</DoubleClickSpeed>
+
+    <!-- Double click delta (in pixels) -->
+    <DoubleClickDelta>2</DoubleClickDelta>
+
+    <!-- The focus model (sloppy or click) -->
+    <FocusModel>sloppy</FocusModel>
+
+    <!-- The snap mode (none, screen, or border) -->
+    <SnapMode distance="10">border</SnapMode>
+
+    <!-- The move mode (outline or opaque) -->
+    <MoveMode>opaque</MoveMode>
+
+    <!-- The resize mode (outline or opaque) -->
+    <ResizeMode>opaque</ResizeMode>
+
+    <!-- Key bindings -->
+    <Key key="Up">up</Key>
+    <Key key="Down">down</Key>
+    <Key key="Right">right</Key>
+    <Key key="Left">left</Key>
+    <Key key="h">left</Key>
+    <Key key="j">down</Key>
+    <Key key="k">up</Key>
+    <Key key="l">right</Key>
+    <Key key="Return">select</Key>
+    <Key key="Escape">escape</Key>
+
+    <Key key="XF86AudioRaiseVolume">exec:wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+</Key>
+    <Key key="XF86AudioLowerVolume">exec:wpctl set-volume @DEFAULT_AUDIO_SINK@ -5%</Key>
+    <Key key="XF86AudioMute">exec:wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle</Key>
+    <Key key="XF86MonBrightnessUp">exec:brightnessctl set +10%</Key>
+    <Key key="XF86MonBrightnessDown">exec:brightnessctl set 10%-</Key>
+    <Key mask="A" key="Print">exec:scrot</Key>
+    <Key mask="AS" key="Print">exec:scrot -s</Key>
+
+    <Key mask="A" key="Print">exec:scrot</Key>
+    <Key mask="AS" key="Print">exec:scrot -s</Key>
+    <Key mask="A" key="Tab">nextstacked</Key>
+    <Key mask="A" key="F4">close</Key>
+    <Key mask="A" key="#">desktop#</Key>
+    <Key mask="A" key="F1">root:1</Key>
+    <Key mask="A" key="F2">window</Key>
+    <Key mask="A" key="F10">maximize</Key>
+    <Key mask="A" key="Right">rdesktop</Key>
+    <Key mask="A" key="Left">ldesktop</Key>
+    <Key mask="A" key="Up">udesktop</Key>
+    <Key mask="A" key="Down">ddesktop</Key>
+    <Key mask="A" key="r">exec:rofi -show drun</Key>
+
+    <!-- Mouse bindings -->
+    <Mouse context="root" button="4">ldesktop</Mouse>
+    <Mouse context="root" button="5">rdesktop</Mouse>
+
+    <Mouse context="title" button="1">move</Mouse>
+    <Mouse context="title" button="2">move</Mouse>
+    <Mouse context="title" button="3">window</Mouse>
+    <Mouse context="title" button="4">shade</Mouse>
+    <Mouse context="title" button="5">shade</Mouse>
+    <Mouse context="title" button="11">maximize</Mouse>
+
+    <Mouse context="icon" button="1">window</Mouse>
+    <Mouse context="icon" button="2">move</Mouse>
+    <Mouse context="icon" button="3">window</Mouse>
+    <Mouse context="icon" button="4">shade</Mouse>
+    <Mouse context="icon" button="5">shade</Mouse>
+
+    <Mouse context="border" button="1">resize</Mouse>
+    <Mouse context="border" button="2">move</Mouse>
+    <Mouse context="border" button="3">window</Mouse>
+
+    <Mouse context="close" button="-1">close</Mouse>
+    <Mouse context="close" button="2">move</Mouse>
+    <Mouse context="close" button="-3">close</Mouse>
+
+    <Mouse context="maximize" button="-1">maximize</Mouse>
+    <Mouse context="maximize" button="-2">maxv</Mouse>
+    <Mouse context="maximize" button="-3">maxh</Mouse>
+
+    <Mouse context="minimize" button="-1">minimize</Mouse>
+    <Mouse context="minimize" button="2">move</Mouse>
+    <Mouse context="minimize" button="-3">shade</Mouse>
+
+</JWM>
+

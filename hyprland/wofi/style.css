@@ -1,0 +1,98 @@
+/* --- Global --- */
+* {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+/* --- Window --- */
+#window {
+  background-color: rgba(5, 7, 5, 0.92);
+  color: #b9f6ca;
+  border: 2px solid rgba(0, 255, 153, 0.3);
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+  max-width: 380px;
+  min-width: 320px;
+}
+
+/* --- Outer box --- */
+#outer-box {
+  padding: 12px;
+}
+
+/* --- Input box --- */
+#input {
+  background-color: rgba(0, 20, 10, 0.5);
+  color: #b9f6ca;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 500;
+  border: 1px solid rgba(0, 255, 153, 0.2);
+}
+#input:focus {
+  outline: none;
+  border: 1px solid rgba(0, 255, 153, 0.5);
+  box-shadow: 0 0 8px rgba(0, 255, 153, 0.15);
+}
+
+/* --- Selected input text --- */
+#input:selected,
+#entry:selected {
+  background-color: rgba(0, 255, 153, 0.25);
+  color: #fff;
+  box-shadow: 0 0 12px rgba(0, 255, 153, 0.2);
+}
+
+/* --- Scroll area --- */
+#scroll {
+  margin-top: 12px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* --- Inner box --- */
+#inner-box {
+  padding: 4px 0;
+}
+
+/* --- Image/icon --- */
+#img {
+  margin-right: 12px;
+}
+
+/* --- Text items --- */
+#text {
+  color: #b9f6ca;
+  font-weight: 500;
+}
+
+#text:selected {
+  color: #fff;
+}
+
+/* --- Entries --- */
+#entry {
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 3px;
+  transition: all 0.15s ease;
+}
+
+#entry:selected {
+  background-color: rgba(0, 255, 153, 0.15);
+  color: #ffffff;
+  border: 1px solid rgba(0, 255, 153, 0.3);
+  box-shadow: 0 2px 8px rgba(0, 255, 153, 0.12);
+}
+
+/* --- Unselected / Selected wrappers --- */
+#unselected {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+}
+
+#selected {
+  border-radius: 5px;
+}

@@ -1,0 +1,56 @@
+#window, #outer-box, #input, #inner-box, #entry {
+	color: white;
+}
+
+#window {
+	background-color: rgba(11,23,34,0.5);
+	border: 5px solid #3584e4;
+	border-radius: 0px;
+	padding: 0px
+}
+
+#outer-box {
+	margin: 2px;
+}
+
+#inner-box {
+	margin: 15px;
+	padding: 5px 0px;
+}
+
+#input {
+	margin-bottom: 0px;
+	background-color: rgba(11,23,34,0.65);
+	border: none;
+	padding: 15px;
+	margin: 3px 3px 0px 3px;
+	border-radius: 0px;
+	font-size: 18px;
+	font-family: "Iosevka Fixed SS14";
+}
+
+#scroll {
+	margin: 0px;
+}
+
+#text {
+	font-size: 18px;
+	margin: 10px;
+	padding: 5px;
+	font-family: "Iosevka Fixed SS14";
+}
+
+#entry {
+	padding: 5px 15px;
+	margin: 5px 0px;
+}
+
+#entry:selected {
+	font-weight: bold;
+	color: white;
+	border: 5px solid #3584e4;
+	border-radius: 0px;
+	padding: 5px 20px;
+	margin: 0px;
+	background-color: rgba(11,23,34,0.75);
+}

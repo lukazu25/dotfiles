@@ -1,0 +1,139 @@
+configuration {
+    modi: "run,drun,window";
+    show-icons: true;
+    terminal: "kitty";
+    drun-display-format: "{icon} {name}";
+    run-display-format: " {name}";
+    disable-history: false;
+    display-drun: "   Apps ";
+    display-run: "   Run ";
+    display-window: " 󰕰  Window";
+    display-Network: " 󰤨  Network";
+    click-to-exit: true;
+    global-kb: true;
+    me-accept-entry: "MousePrimary";
+    me-select-entry: "MouseDPrimary";
+    hover-select: true;
+}
+
+
+window {
+    transparency: "real";
+    location: center;
+    anchor: center;
+    width: 800px;
+    height: 47%;
+    background-color: rgba(11, 23, 34, 0.5);
+    border-radius: 0px;
+    border: 5px;
+    border-color: #3584e4;
+}
+
+mainbox {
+    enabled: true;
+    spacing: 0px;
+    background-color: transparent;
+    orientation: vertical;
+    children: [ "inputbar", "listbox" ];
+}
+
+inputbar {
+    enabled: true;
+    spacing: 5px;
+    padding: 10px;
+    background-color: transparent;
+    text-color: white;
+    orientation: horizontal;
+    children: [ "prompt", "textbox-prompt-colon", "entry" ];
+}
+
+prompt {
+    font: "JetBrainsMono Nerd Font";
+    background-color: #3584e4;
+    text-color: #0b151c;
+    padding: 15px;
+    border-radius: 0px;
+    border: 0px;
+    border-color: transparent;
+}
+
+textbox-prompt-colon {
+    enabled: false;
+}
+
+entry {
+    enabled: true;
+    placeholder: "Search";
+    placeholder-color: white;
+    background-color: rgba(11, 23, 34, 0.65);
+    color: white;
+    cursor-color: rgba(255, 255, 255, 0.5);
+    padding: 15px;
+    margin: 3px 3px 0px 3px;
+    border: 0px;
+    border-color: transparent;
+    border-radius: 0px;
+    font: "JetBrainsMono Nerd Font 12";
+}
+
+listbox {
+    spacing: 10px;
+    padding: 10px;
+    background-color: transparent;
+    orientation: vertical;
+    children: [ "message", "listview" ];
+}
+
+listview {
+    enabled: true;
+    padding: 5px;
+    background-color: transparent;
+    scrollbar: false;
+    border: 0px;
+    border-color: transparent;
+    border-radius: 0px;
+    children: [ "element" ];
+    cycle: true;
+    dynamic: true;
+}
+
+element {
+    background-color: transparent;
+    spacing: 1px;
+    padding: 5px 15px;
+    border: 0px;
+    border-color: transparent;
+}
+
+element.normal.normal,
+element.alternate.normal {
+    background-color: transparent;
+    color: white;
+}
+
+element.selected.normal {
+    font-weight: bold;
+    color: white;
+    background-color: rgba(11, 23, 34, 0.75);
+    border: 5px;
+    border-color: #3584e4;
+    border-radius: 0px;
+    padding: 5px 20px;
+    margin: 0px;
+}
+
+element-icon {
+    enabled: true;
+    size: 24px;
+    background-color: transparent;
+}
+
+element-text {
+    enabled: true;
+    padding: 10px;
+    font-weight: bold;
+    font: "JetBrainsMono Nerd Font 12";
+    background-color: transparent;
+    text-color: white;
+}
+

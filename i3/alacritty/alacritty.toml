@@ -1,0 +1,26 @@
+[general]
+import = ["themes/blood_moon.toml"]
+
+[env]
+TERM = "screen-256color"
+
+[font]
+size = 15
+
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
+italic = { family = "JetBrainsMono Nerd Font", style = "Italic" }
+
+# [window]
+# opacity = 0.6
+# option_as_alt = "both"
+# decorations = "none"
+# dynamic_padding = true
+
+# [window.padding]
+# x = 0
+# y = 0
+
+# to install the themes
+# mkdir -p ~/.config/alacritty/themes
+# git clone https://github.com/alacritty/alacritty-theme ~/.config/alacritty/themes

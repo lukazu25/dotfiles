@@ -1,0 +1,157 @@
+{
+  "layer": "top",
+  "spacing": 8,
+  "margin-top": 0,
+  "margin-left": 0,
+  "margin-right": 0,
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "tray",
+    "network",
+    "cpu",
+    "memory",
+    "pulseaudio",
+    "battery",
+    "custom/power"
+  ],
+  "custom/rofi": {
+    "format": "",
+    "on-click": "rofi -show drun",
+    "escape": true,
+    "tooltip": false
+  },
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "format": "{name}",
+    "format-icons": {
+      "urgent": "",
+      "focused": "",
+      "default": ""
+    }
+  },
+  "hyprland/window": {
+    "format": "󰣆 {class}",
+    "separate-outputs": true,
+    "icon": false,
+    "tooltip": false
+  },
+  "hyprland/language": {
+    "format": "󰌌 {}",
+    "separate-outputs": true,
+    "format-en": "EN",
+    "format-ru": "RU",
+    "format-ka": "GE",
+    "on-click": "hyprctl switchxkblayout at-translated-set-2-keyboard next"
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 8
+  },
+  "disk": {
+    "format": " {free}",
+    "interval": 20
+  },
+  "cpu": {
+    "format": " {usage}%",
+    "tooltip": true,
+    "interval": 1
+  },
+  "temperature": {
+    "format": " {}",
+    "tooltip": false
+  },
+  "backlight": {
+    "format": "󰞏 {percent}%",
+    "tooltip": false
+  },
+  "memory": {
+    "format": " {}%"
+  },
+  "power-profiles-daemon": {
+    "format": " {icon} ",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
+  },
+  "pulseaudio": {
+    "format": " {volume}%",
+    "format-muted": " {volume}%",
+    "format-bluetooth": "󰂰 {volume}%",
+    "format-bluetooth-muted": "󰂲 {volume}%",
+    "format-source": "{volume}% ",
+    "on-click": "pavucontrol",
+    "tooltip": false,
+    "max-volume": 130
+  },
+  "battery": {
+    "interval": 1,
+    "states": {
+      "good": 99,
+      "warning": 30,
+      "critical": 20
+    },
+    "format-icons": [
+      "󰂎",
+      "󰁺",
+      "󰁻",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ],
+    "format": " {icon} {capacity}%",
+    "format-critical": " {icon} {capacity}%",
+    "format-warning": " {icon} {capacity}%",
+    "format-full": " {icon} {capacity}%",
+    "format-charging": "󰂅 {capacity}%",
+    "format-charging-warning": "󰢝 {capacity}%",
+    "format-charging-critical": "󰢜 {capacity}%",
+    "format-plugged": "󰂅 {capacity}%",
+    "format-alt": "󱧥 {time}",
+    "tooltip": false
+  },
+  "network": {
+    "interval": 2,
+    "format": "󱘖 {bandwidthDownBits}",
+    "format-wifi": " {icon} {bandwidthDownBits}",
+    "format-ethernet": "󰈀 {bandwidthDownBits}",
+    "format-icons": [
+      "󰤫",
+      "󰤟",
+      "󰤢",
+      "󰤥",
+      "󰤨"
+    ],
+    "tooltip": false,
+    "states": {
+      "normal": 25
+    }
+  },
+  "custom/power": {
+    "format": "⏻",
+    "tooltip": false,
+    "tooltip-label": "Power Options",
+    "on-click": "~/.config/rofi/powermenu.sh"
+  },
+  "clock": {
+    "format": "{:%H:%M}",
+    "format-alt": "{:%A, %d %B %Y}",
+    "tooltip": false,
+    "interval": 1
+  }
+}
+

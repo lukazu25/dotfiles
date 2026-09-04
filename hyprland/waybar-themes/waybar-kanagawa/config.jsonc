@@ -1,0 +1,169 @@
+{
+  "position": "top",
+  "margin-left": 0,
+  "margin-right": 0,
+  "height": 45,
+  "modules-left": ["hyprland/workspaces", "hyprland/window"],
+  "modules-center": ["group/time"],
+  "modules-right": [
+    "battery",
+    "hyprland/language",
+    "group/audio",
+    "group/hardware",
+    "power-profiles-daemon",
+    "tray",
+    "custom/notifications",
+    "custom/powermenu"
+  ],
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "<span color=\"#DCA561\">{icon}</span> {capacity}%",
+    "format-full": "<span color=\"#DCA561\">{icon}</span> {capacity}%",
+    "format-charging": "<span color=\"#DCA561\"></span> {capacity}%",
+    "format-plugged": "<span color=\"#DCA561\"></span> {capacity}%",
+    "format-icons": ["", "", "", "", ""]
+  },
+  "hyprland/window": {
+    "format": "{title}",
+    "max-length": 35,
+    "rewrite": {
+      "": "Hyprland"
+    },
+    "separate-outputs": false
+  },
+  "hyprland/language": {
+    "format": "<span color=\"#DCA561\"></span> {}",
+	"format-en": "EN",
+    "format-ka": "GE",
+    "format-ru": "RU" 
+  },
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "sort-by-number": true,
+    "persistent-workspaces": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5"
+    }
+  },
+
+  // Hardware info
+  "group/hardware": {
+    "orientation": "horizontal",
+    "modules": ["cpu", "memory"]
+  },
+  "cpu": {
+    "format": "<span color=\"#DCA561\"></span> {usage}%"
+  },
+  "memory": {
+    "format": "<span color=\"#DCA561\"></span> {percentage}%"
+  },
+
+  // Audio info
+  "group/audio": {
+    "orientation": "horizontal",
+    "modules": ["pulseaudio#output", "pulseaudio#input"]
+  },
+  "pulseaudio#output": {
+    "format": "<span color=\"#DCA561\">{icon}</span> {volume}%",
+    "format-muted": " ",
+    "format-icons": {
+      "headphone": "",
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol"
+  },
+  "pulseaudio#input": {
+    "format": "{format_source}",
+    "format-source": "<span color=\"#DCA561\"></span> {volume}%",
+    "format-source-muted": " ",
+    "on-click": "pavucontrol"
+  },
+
+  // Time
+  "group/time": {
+    "modules": ["clock", "clock#simple"],
+    "orientation": "horizontal"
+  },
+  "clock#simple": {
+    "format": "{:%H:%M}",
+    "tooltip": false,
+    "interval": 1
+  },
+  "clock": {
+    "format": "{:L%a %d, %b %Y}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%d-%m-%Y}"
+  },
+
+  // Powermenu
+  "custom/powermenu": {
+		"format": "<span color='#DCA561'>⏻</span>",
+		"on-click": "~/.config/rofi/powermenu.sh",
+		"escape": true,
+		"tooltip": false
+	},
+ 
+  "privacy": {
+    "icon-size": 15,
+    "icon-spacing": 8
+  },
+  "network": {
+    "format-wifi": "<span color=\"#DCA561\"></span>",
+    "format-ethernet": "<span color=\"#DCA561\"></span>",
+    "format-disconnected": "<span color=\"#DCA561\">⚠</span>",
+    "tooltip": true,
+    "tooltip-format": "{ifname} {essid}", 
+    "tooltip-ethernet": "{ifname}",
+    "tooltip-wifi": "{essid}",
+    "on-click": "kitty -e nmtui"
+  },
+   
+  // Power-Profiles-Daemon
+  "power-profiles-daemon": {
+    "format": "<span color='#DCA561'>{icon}</span>",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "<span color='#DCA561'></span>",
+      "performance": "<span color='#DCA561'></span>",
+      "balanced": "<span color='#DCA561'></span>",
+      "power-saver": "<span color='#DCA561'></span>"
+    }
+  },
+
+  // Backlight
+  "backlight": {
+      //  "device": "intel_backlight",
+        "format": "<span color=\"#DCA561\">{icon}</span> {percent}%",
+        "format-icons": ["󰃞", "󰃟", "󰃠"],
+        "tooltip-format": "Brightness: {percent}%"    
+  },
+
+  // Temperature 
+  "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureF}°F {icon}",
+        "format": "<span color=\"#DCA561\">{icon}</span> {temperatureC}°C",
+        "tooltip": true,
+        "format-icons": ["", "", ""]
+    },
+
+  // Notifications
+  "custom/notifications": {
+        "format": "<span color='#DCA561'></span>",
+	    "on-click": "swaync-client -t",
+        "tooltip": false
+    },
+ 
+  "tray": {
+    "spacing": 10
+  }
+}
